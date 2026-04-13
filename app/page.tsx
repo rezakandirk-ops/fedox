@@ -4,6 +4,7 @@ import { ArrowRight, Phone, CheckCircle2, Sparkles, ShieldCheck, Clock } from "l
 import { ShaderBackground } from "@/components/ui/hero-shader"
 import { WaveDivider } from "@/components/wave-divider"
 import { services } from "@/lib/services"
+import { contact } from "@/lib/contact"
 
 export default function HomePage() {
   return (
@@ -24,14 +25,15 @@ export default function HomePage() {
               Ihr Partner für
               <br />
               <span className="bg-gradient-to-r from-[color:var(--brand-drop)] via-white to-[color:var(--brand-drop)] bg-clip-text text-transparent">
-                Facility Services
+                Sauberkeit und Werterhalt
               </span>
             </h1>
 
             <p className="mt-6 max-w-2xl text-balance text-lg leading-relaxed text-white/80">
-              Vom Gebäudemanagement bis zur Spezialreinigung sorgen wir zuverlässig
-              für saubere, gepflegte und hygienische Umgebungen. Professionell,
-              termintreu und individuell abgestimmt.
+              Sauberkeit, Werterhalt und zuverlässiger Service stehen bei uns im
+              Mittelpunkt. Mit Erfahrung, Sorgfalt und einem geschulten Blick für
+              Qualität sorgen wir dafür, dass Immobilien professionell betreut und
+              dauerhaft gepflegt bleiben.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -43,17 +45,17 @@ export default function HomePage() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <a
-                href="tel:+4900000000000"
+                href={`tel:${contact.phoneTel}`}
                 className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20"
               >
                 <Phone className="h-4 w-4" />
-                Jetzt anrufen
+                {contact.phone}
               </a>
             </div>
 
             <div className="mt-14 grid w-full max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
               {[
-                { icon: CheckCircle2, label: "13 Leistungen aus einer Hand" },
+                { icon: CheckCircle2, label: "8 Leistungen aus einer Hand" },
                 { icon: ShieldCheck, label: "Versichert & zertifiziert" },
                 { icon: Clock, label: "Termintreu und zuverlässig" },
               ].map(({ icon: Icon, label }) => (
