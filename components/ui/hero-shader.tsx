@@ -52,19 +52,55 @@ export function ShaderBackground({ children, className = "", variant = "hero" }:
       <MeshGradient
         className="absolute inset-0 h-full w-full"
         colors={colorsPrimary}
-        speed={0.25}
-        distortion={0.85}
-        swirl={0.6}
+        speed={0.4}
+        distortion={1}
+        swirl={0.75}
       />
       <MeshGradient
-        className="absolute inset-0 h-full w-full opacity-50 mix-blend-screen"
+        className="absolute inset-0 h-full w-full opacity-60 mix-blend-screen"
         colors={colorsOverlay}
-        speed={0.18}
-        distortion={1}
-        swirl={0.3}
+        speed={0.3}
+        distortion={1.15}
+        swirl={0.45}
       />
 
+      {variant === "hero" && <HeroDrops />}
+
       {children}
+    </div>
+  )
+}
+
+function HeroDrops() {
+  const drops = [
+    { left: "8%", delay: "0s", size: 14, duration: "9s" },
+    { left: "18%", delay: "2s", size: 8, duration: "11s" },
+    { left: "32%", delay: "4s", size: 12, duration: "10s" },
+    { left: "44%", delay: "1.5s", size: 6, duration: "12s" },
+    { left: "58%", delay: "3.5s", size: 10, duration: "9.5s" },
+    { left: "70%", delay: "0.8s", size: 14, duration: "11.5s" },
+    { left: "82%", delay: "2.8s", size: 7, duration: "10.5s" },
+    { left: "92%", delay: "5s", size: 9, duration: "9s" },
+  ]
+  return (
+    <div
+      aria-hidden
+      className="pointer-events-none absolute inset-0 overflow-hidden"
+      style={{ filter: "url(#gooey-filter)" }}
+    >
+      {drops.map((d, i) => (
+        <span
+          key={i}
+          className="hero-drop absolute bottom-0 rounded-full bg-white/40"
+          style={{
+            left: d.left,
+            width: d.size,
+            height: d.size,
+            animationDelay: d.delay,
+            animationDuration: d.duration,
+          }}
+        />
+      ))}
     </div>
   )
 }
