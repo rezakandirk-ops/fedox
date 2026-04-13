@@ -5,6 +5,7 @@ import { ShaderBackground } from "@/components/ui/hero-shader"
 import { WaveDivider } from "@/components/wave-divider"
 import { StatsBar } from "@/components/stats-bar"
 import { ReferenceMarquee } from "@/components/reference-marquee"
+import { QuoteForm } from "@/components/quote-form"
 import { services } from "@/lib/services"
 import { contact } from "@/lib/contact"
 
@@ -214,6 +215,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ANGEBOT */}
+      <QuoteForm />
 
       {/* REFERENZEN */}
       <ReferenceMarquee />
