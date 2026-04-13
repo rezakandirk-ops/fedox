@@ -84,12 +84,12 @@ export default function HomePage() {
               Unsere Leistungen
             </span>
             <h2 className="mt-5 text-balance text-4xl font-bold tracking-tight text-[color:var(--brand-deep)] sm:text-5xl">
-              13 Leistungen. Ein Ansprechpartner.
+              Leistungen
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-              Ob tägliche Büroreinigung, saisonaler Winterdienst oder einmalige
-              Bauendreinigung, wir decken das gesamte Spektrum moderner Facility
-              Services ab.
+              Acht Leistungen aus einer Hand — von der täglichen Büroreinigung bis
+              zum ganzheitlichen Gebäudemanagement. Wir decken das gesamte Spektrum
+              moderner Facility Services ab.
             </p>
           </div>
 
@@ -97,9 +97,8 @@ export default function HomePage() {
             {services.map((service) => {
               const Icon = service.icon
               return (
-                <Link
+                <div
                   key={service.slug}
-                  href={`/leistungen/${service.slug}`}
                   className="group relative flex flex-col overflow-hidden rounded-3xl border border-[color:var(--brand-soft)] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[color:var(--brand-drop)]/40 hover:shadow-2xl hover:shadow-[color:var(--brand)]/10"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
@@ -127,12 +126,15 @@ export default function HomePage() {
                     <p className="text-sm leading-relaxed text-muted-foreground">
                       {service.shortDescription}
                     </p>
-                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand)] transition-all group-hover:gap-3">
-                      Mehr erfahren
+                    <a
+                      href="#angebot"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand)] transition-all hover:gap-3"
+                    >
+                      Angebot anfragen
                       <ArrowRight className="h-4 w-4" />
-                    </span>
+                    </a>
                   </div>
-                </Link>
+                </div>
               )
             })}
           </div>
