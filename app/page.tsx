@@ -4,6 +4,7 @@ import { ArrowRight, Phone, CheckCircle2, Sparkles, ShieldCheck, Clock } from "l
 import { ShaderBackground } from "@/components/ui/hero-shader"
 import { WaveDivider } from "@/components/wave-divider"
 import { StatsBar } from "@/components/stats-bar"
+import { ReferenceMarquee } from "@/components/reference-marquee"
 import { services } from "@/lib/services"
 import { contact } from "@/lib/contact"
 
@@ -215,35 +216,7 @@ export default function HomePage() {
       </section>
 
       {/* REFERENZEN */}
-      <section id="referenzen" className="bg-white py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-soft)] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[color:var(--brand-deep)]">
-              Vertrauen seit Tag 1
-            </span>
-            <h2 className="mt-5 text-balance text-3xl font-bold tracking-tight text-[color:var(--brand-deep)] sm:text-4xl">
-              Unternehmen, die auf uns vertrauen
-            </h2>
-          </div>
-
-          <div className="mt-12 grid grid-cols-2 items-center gap-6 sm:grid-cols-3 md:grid-cols-5">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div
-                key={i}
-                className="flex h-24 items-center justify-center rounded-2xl border border-[color:var(--brand-soft)] bg-[color:var(--brand-soft)]/40 p-4 transition-all hover:border-[color:var(--brand)]/30 hover:bg-white"
-              >
-                <Image
-                  src={`/referenzen/ref-${i}.jpg`}
-                  alt={`Referenzkunde ${i}`}
-                  width={160}
-                  height={80}
-                  className="max-h-14 w-auto object-contain mix-blend-multiply"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ReferenceMarquee />
 
       {/* CTA */}
       <section className="relative overflow-hidden">
