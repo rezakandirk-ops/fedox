@@ -149,27 +149,29 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 md:grid-cols-2">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[color:var(--brand-deep)]">
-              Über fedox
+              Seit 2020
             </span>
             <h2 className="mt-5 text-balance text-4xl font-bold tracking-tight text-[color:var(--brand-deep)] sm:text-5xl">
-              Sauberkeit ist Vertrauenssache
+              Kompetenz und Sauberkeit aus einer Hand
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-              Als erfahrener Dienstleister für Gebäudemanagement und
-              Reinigungsservices betreuen wir Büros, Praxen, Industriebetriebe und
-              Wohnanlagen mit höchstem Qualitätsanspruch. Unser Team arbeitet
-              termintreu, diskret und immer mit Blick auf den Gesamtzustand Ihrer
-              Immobilie.
+              Mit unserer Fachkompetenz und langjährigen Erfahrung sind wir Ihr
+              zuverlässiger Partner für Sauberkeit, Pflege und Werterhalt. Unser
+              Anspruch geht über reine Reinigung hinaus: Wir schaffen saubere,
+              hygienische und repräsentative Räume, in denen sich Mitarbeiter, Kunden,
+              Besucher und Bewohner gleichermaßen wohlfühlen. Mit einem engagierten
+              Team, hochwertiger Ausstattung und modernen Arbeitsmethoden liefern wir
+              effiziente, flexible und auf Ihr Objekt abgestimmte Lösungen.
             </p>
 
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {[
+                "Inhabergeführt seit 2020",
                 "Geschultes Fachpersonal",
                 "Feste Ansprechpartner",
                 "Transparente Abläufe",
-                "Zertifizierte Qualität",
                 "Moderne Technik",
-                "Faire Preise",
+                "Umweltfreundliche Mittel",
               ].map((item) => (
                 <li
                   key={item}
@@ -183,7 +185,7 @@ export default function HomePage() {
 
             <div className="mt-10">
               <Link
-                href="/kontakt"
+                href="#angebot"
                 className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[color:var(--brand-deep)] to-[color:var(--brand)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[color:var(--brand)]/20 transition-all hover:shadow-xl"
               >
                 Angebot anfragen
@@ -203,9 +205,9 @@ export default function HomePage() {
               />
             </div>
             <div className="absolute -bottom-6 -left-6 hidden w-60 rounded-2xl border border-[color:var(--brand-soft)] bg-white p-5 shadow-xl sm:block">
-              <p className="text-3xl font-bold text-[color:var(--brand)]">100%</p>
+              <p className="text-3xl font-bold text-[color:var(--brand)]">Seit 2020</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Zuverlässigkeit & Termintreue
+                Verlässlich am Markt
               </p>
             </div>
           </div>
