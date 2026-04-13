@@ -3,6 +3,7 @@ import Image from "next/image"
 import { ArrowRight, Phone, CheckCircle2, Sparkles, ShieldCheck, Clock } from "lucide-react"
 import { ShaderBackground } from "@/components/ui/hero-shader"
 import { WaveDivider } from "@/components/wave-divider"
+import { StatsBar } from "@/components/stats-bar"
 import { services } from "@/lib/services"
 import { contact } from "@/lib/contact"
 
@@ -140,6 +141,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <StatsBar />
 
       {/* ÜBER UNS */}
       <section id="ueber-uns" className="relative overflow-hidden bg-[color:var(--brand-soft)] py-24">
