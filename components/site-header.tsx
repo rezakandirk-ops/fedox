@@ -88,6 +88,7 @@ export function SiteHeader() {
             ))}
             <a
               href={`tel:${contact.phoneTel}`}
+              onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--brand-deep)]/20 bg-white px-5 py-3 text-sm font-semibold text-[color:var(--brand-deep)]"
             >
               <Phone className="h-4 w-4" />
