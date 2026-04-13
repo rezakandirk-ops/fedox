@@ -4,17 +4,9 @@ import { useState } from "react"
 import Image from "next/image"
 import { Sparkles, ArrowRight } from "lucide-react"
 import { contact } from "@/lib/contact"
+import { services } from "@/lib/services"
 
-const dienstleistungen = [
-  "Unterhalts- & Büroreinigung",
-  "Glas- & Rahmenreinigung",
-  "Treppenhausreinigung",
-  "Hygiene & Desinfektionsreinigung",
-  "Fassadenreinigung",
-  "Allgemeine Sonderreinigung",
-  "Photovoltaikanlagenreinigung",
-  "Gebäudemanagement",
-]
+const dienstleistungen = services.map((s) => s.title)
 
 const turnusOptionen = [
   "Einmalig",
