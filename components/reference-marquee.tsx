@@ -3,8 +3,6 @@ import Image from "next/image"
 type LogoItem = {
   src: string
   alt: string
-  width?: number
-  height?: number
 }
 
 const referenzen: LogoItem[] = [
