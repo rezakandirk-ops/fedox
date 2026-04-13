@@ -54,13 +54,13 @@ export function SiteHeader() {
             <Phone className="h-4 w-4" />
             Anrufen
           </a>
-          <a
+          <Link
             href="/#angebot"
             className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[color:var(--brand-deep)] to-[color:var(--brand)] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[color:var(--brand)]/20 transition-all hover:shadow-xl hover:shadow-[color:var(--brand)]/30"
           >
             <FileText className="h-4 w-4" />
             Angebot
-          </a>
+          </Link>
         </div>
 
         <button
@@ -94,14 +94,14 @@ export function SiteHeader() {
               <Phone className="h-4 w-4" />
               Anrufen
             </a>
-            <a
+            <Link
               href="/#angebot"
               onClick={() => setOpen(false)}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[color:var(--brand-deep)] to-[color:var(--brand)] px-5 py-3 text-sm font-semibold text-white"
             >
               <FileText className="h-4 w-4" />
               Angebot
-            </a>
+            </Link>
           </nav>
         </div>
       )}
