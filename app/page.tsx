@@ -235,18 +235,18 @@ export default function HomePage() {
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/kontakt"
+                href="#angebot"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-semibold text-[color:var(--brand-deep)] shadow-xl transition-all hover:shadow-2xl"
               >
                 Angebot anfragen
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <a
-                href="tel:+4900000000000"
+                href={`tel:${contact.phoneTel}`}
                 className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-8 py-4 text-sm font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20"
               >
                 <Phone className="h-4 w-4" />
-                +49 000 0000000
+                {contact.phone}
               </a>
             </div>
           </div>
