@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { FloatingActions } from "@/components/floating-actions"
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -34,6 +35,7 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <FloatingActions />
       </body>
     </html>
   )

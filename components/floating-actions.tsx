@@ -1,0 +1,57 @@
+import type { ComponentType, SVGProps } from "react"
+import { Mail, Phone, MessageCircle } from "lucide-react"
+import { contact } from "@/lib/contact"
+
+function InstagramGlyph(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
+    </svg>
+  )
+}
+
+type Action = {
+  href: string
+  icon: ComponentType<SVGProps<SVGSVGElement>>
+  label: string
+  color: string
+}
+
+const actions: Action[] = [
+  { href: `mailto:${contact.email}`, icon: Mail, label: "E-Mail", color: "bg-[color:var(--brand-deep)]" },
+  { href: `tel:${contact.phoneTel}`, icon: Phone, label: "Anrufen", color: "bg-[color:var(--brand)]" },
+  { href: contact.instagram, icon: InstagramGlyph, label: "Instagram", color: "bg-pink-500" },
+  { href: contact.whatsapp, icon: MessageCircle, label: "WhatsApp", color: "bg-green-500" },
+]
+
+export function FloatingActions() {
+  return (
+    <div className="pointer-events-none fixed inset-y-0 right-0 z-40 hidden items-center pr-3 md:flex">
+      <ul className="pointer-events-auto flex flex-col gap-3 rounded-full bg-white/80 p-2 shadow-xl ring-1 ring-black/5 backdrop-blur-md">
+        {actions.map(({ href, icon: Icon, label, color }) => (
+          <li key={label}>
+            <a
+              href={href}
+              aria-label={label}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className={`flex h-11 w-11 items-center justify-center rounded-full text-white shadow-md transition-transform hover:scale-110 ${color}`}
+            >
+              <Icon className="h-5 w-5" />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
