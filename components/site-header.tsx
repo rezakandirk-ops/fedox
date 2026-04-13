@@ -3,13 +3,14 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
-import { Menu, X, Phone } from "lucide-react"
+import { Menu, X, Phone, FileText } from "lucide-react"
+import { contact } from "@/lib/contact"
 
 const nav = [
   { label: "Leistungen", href: "/#leistungen" },
   { label: "Über uns", href: "/#ueber-uns" },
   { label: "Referenzen", href: "/#referenzen" },
-  { label: "Kontakt", href: "/kontakt" },
+  { label: "Angebot", href: "/#angebot" },
 ]
 
 export function SiteHeader() {
@@ -45,13 +46,20 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-2 md:flex">
           <a
-            href="tel:+4900000000000"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[color:var(--brand-deep)] to-[color:var(--brand)] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[color:var(--brand)]/20 transition-all hover:shadow-xl hover:shadow-[color:var(--brand)]/30"
+            href={`tel:${contact.phoneTel}`}
+            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-deep)]/15 bg-white px-4 py-2.5 text-sm font-semibold text-[color:var(--brand-deep)] transition-all hover:border-[color:var(--brand)]/40 hover:bg-[color:var(--brand-soft)]"
           >
             <Phone className="h-4 w-4" />
-            Jetzt anrufen
+            Anrufen
+          </a>
+          <a
+            href="/#angebot"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[color:var(--brand-deep)] to-[color:var(--brand)] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[color:var(--brand)]/20 transition-all hover:shadow-xl hover:shadow-[color:var(--brand)]/30"
+          >
+            <FileText className="h-4 w-4" />
+            Angebot
           </a>
         </div>
 
@@ -79,11 +87,19 @@ export function SiteHeader() {
               </Link>
             ))}
             <a
-              href="tel:+4900000000000"
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[color:var(--brand-deep)] to-[color:var(--brand)] px-5 py-3 text-sm font-semibold text-white"
+              href={`tel:${contact.phoneTel}`}
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--brand-deep)]/20 bg-white px-5 py-3 text-sm font-semibold text-[color:var(--brand-deep)]"
             >
               <Phone className="h-4 w-4" />
-              Jetzt anrufen
+              Anrufen
+            </a>
+            <a
+              href="/#angebot"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[color:var(--brand-deep)] to-[color:var(--brand)] px-5 py-3 text-sm font-semibold text-white"
+            >
+              <FileText className="h-4 w-4" />
+              Angebot
             </a>
           </nav>
         </div>
