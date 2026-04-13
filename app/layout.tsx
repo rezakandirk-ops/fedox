@@ -18,9 +18,10 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "fedox Facility Services | Sauberkeit und Hygiene in Perfektion",
+  title: "fedox Facility Services | Sauberkeit und Werterhalt aus einer Hand",
   description:
-    "Ihr verlässlicher Partner für Gebäudemanagement, Büro-, Glas-, Industrie- und Sonderreinigung. Jetzt unverbindlich Angebot anfragen.",
+    "Ihr Partner für Sauberkeit und Werterhalt in Dortmund und Umgebung. Unterhalts-, Glas-, Fassaden- und Sonderreinigung sowie Gebäudemanagement. Jetzt 15 % Neukundenrabatt sichern.",
+  metadataBase: new URL("https://fedox-facilityservices.de"),
 }
 
 export default function RootLayout({
