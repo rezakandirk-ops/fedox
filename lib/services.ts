@@ -182,6 +182,23 @@ export const services: Service[] = [
     image: "/images/industrie.jpg",
     icon: Factory,
   },
+  {
+    slug: "baustellenreinigung",
+    title: "Baustellen- & Bauendreinigung",
+    tagline: "Bezugsfertig übergeben",
+    shortDescription:
+      "Zuverlässige Grob- und Feinreinigung nach Neubau, Umbau oder Renovierung — sauber, schnell, professionell.",
+    longDescription:
+      "Wir bieten zuverlässige und gründliche Baustellenreinigung nach Neubau, Umbau oder Renovierung. Dazu gehören die Entfernung von Staub, Schmutz, Bauschutt und Bauresten sowie die sorgfältige Bauendreinigung und Feinreinigung von Böden, Fenstern, Oberflächen und Sanitärbereichen. Sauber, schnell und professionell — für eine bezugsfertige Übergabe.",
+    bullets: [
+      "Entfernung von Staub und Bauschutt",
+      "Feinreinigung von Böden und Fenstern",
+      "Oberflächen und Sanitärbereiche",
+      "Bezugsfertige Übergabe",
+    ],
+    image: "/images/baustelle.jpg",
+    icon: HardHat,
+  },
 ]
 
 export function getServiceBySlug(slug: string): Service | undefined {
