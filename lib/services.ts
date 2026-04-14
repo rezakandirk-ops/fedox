@@ -8,6 +8,12 @@ import {
   Wrench,
   SunMedium,
   Building2,
+  Factory,
+  HardHat,
+  Droplets,
+  Leaf,
+  Snowflake,
+  Truck,
   type LucideIcon,
 } from "lucide-react"
 
@@ -158,6 +164,23 @@ export const services: Service[] = [
     ],
     image: "/images/gebaeudemanagement.jpg",
     icon: Building2,
+  },
+  {
+    slug: "industriereinigung",
+    title: "Industriereinigung",
+    tagline: "Sauberkeit für Produktion & Halle",
+    shortDescription:
+      "Fachgerechte Reinigung für Produktions-, Hallen- und Industrieflächen — abgestimmt auf Ihren Betrieb.",
+    longDescription:
+      "In Industrie- und Produktionsbereichen sind Sauberkeit, Struktur und Funktionalität von besonderer Bedeutung. Mit unserer Industriereinigung sorgen wir für fachgerechte Reinigungslösungen, die auf die Anforderungen von Betriebs- und Produktionsflächen abgestimmt sind. Dazu gehören Hallenböden, Industrieflächen, Decken, Leuchten sowie weitere stark beanspruchte Bereiche innerhalb von Hallen und gewerblichen Objekten.",
+    bullets: [
+      "Hallenböden und Produktionsflächen",
+      "Decken, Leuchten und Traversen",
+      "Stark beanspruchte Gewerbebereiche",
+      "Abgestimmt auf Ihren Betriebsablauf",
+    ],
+    image: "/images/industrie.jpg",
+    icon: Factory,
   },
 ]
 
