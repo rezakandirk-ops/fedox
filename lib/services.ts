@@ -250,6 +250,23 @@ export const services: Service[] = [
     image: "/images/winterdienst.jpg",
     icon: Snowflake,
   },
+  {
+    slug: "entruempelung",
+    title: "Entrümpelung & Räumung",
+    tagline: "Schnell, sauber, unkompliziert",
+    shortDescription:
+      "Fachgerechte Entrümpelung von Wohnungen, Häusern, Kellern, Garagen, Büros und Gewerbeflächen.",
+    longDescription:
+      "Schnell, sauber und unkompliziert. Wir übernehmen die fachgerechte Entrümpelung von Wohnungen, Häusern, Kellern, Garagen, Büros und Gewerbeflächen — inklusive sortengerechter Entsorgung und besenreiner Übergabe.",
+    bullets: [
+      "Wohnungen, Häuser und Keller",
+      "Garagen, Büros und Gewerbeflächen",
+      "Sortengerechte Entsorgung",
+      "Besenreine Übergabe",
+    ],
+    image: "/images/entruempelung.jpg",
+    icon: Truck,
+  },
 ]
 
 export function getServiceBySlug(slug: string): Service | undefined {
