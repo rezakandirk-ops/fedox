@@ -216,6 +216,23 @@ export const services: Service[] = [
     image: "/images/stein-pflaster.jpg",
     icon: Droplets,
   },
+  {
+    slug: "gartenpflege",
+    title: "Gartenpflege",
+    tagline: "Gepflegte Außenanlagen",
+    shortDescription:
+      "Professionelle Pflege von Rasen, Hecken, Sträuchern und Außenbereichen für ein ansprechendes Erscheinungsbild.",
+    longDescription:
+      "Professionelle Gartenpflege für gepflegte Grünflächen, Außenanlagen und ein ansprechendes Erscheinungsbild Ihrer Immobilie. Wir kümmern uns zuverlässig um Rasenpflege, Hecken- und Strauchschnitt sowie die regelmäßige Pflege Ihrer Außenbereiche.",
+    bullets: [
+      "Rasenpflege und Mäharbeiten",
+      "Hecken- und Strauchschnitt",
+      "Regelmäßige Pflegeintervalle",
+      "Privat und Gewerbe",
+    ],
+    image: "/images/gartenpflege.jpg",
+    icon: Leaf,
+  },
 ]
 
 export function getServiceBySlug(slug: string): Service | undefined {
