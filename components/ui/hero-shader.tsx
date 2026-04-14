@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import { useEffect, useRef, useState } from "react"
 import { MeshGradient } from "@paper-design/shaders-react"
 
 interface ShaderBackgroundProps {
@@ -9,7 +10,36 @@ interface ShaderBackgroundProps {
   variant?: "hero" | "section"
 }
 
+const MAX_PIXEL_COUNT = 1920 * 1080
+
 export function ShaderBackground({ children, className = "", variant = "hero" }: ShaderBackgroundProps) {
+  const wrapperRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(true)
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
+    const update = () => setPrefersReducedMotion(mq.matches)
+    update()
+    mq.addEventListener("change", update)
+    return () => mq.removeEventListener("change", update)
+  }, [])
+
+  useEffect(() => {
+    const el = wrapperRef.current
+    if (!el || typeof IntersectionObserver === "undefined") return
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { rootMargin: "200px" },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  const shouldAnimate = isVisible && !prefersReducedMotion
+  const primarySpeed = shouldAnimate ? 0.4 : 0
+  const overlaySpeed = shouldAnimate ? 0.3 : 0
+
   const colorsPrimary =
     variant === "hero"
       ? ["#0B3B6F", "#1E6BB8", "#3FA9F5", "#0B3B6F", "#083661"]
@@ -21,7 +51,10 @@ export function ShaderBackground({ children, className = "", variant = "hero" }:
       : ["#FFFFFF", "#3FA9F5", "#E8F2FB", "#FFFFFF"]
 
   return (
-    <div className={`relative w-full overflow-hidden bg-[color:var(--brand-deep)] ${className}`}>
+    <div
+      ref={wrapperRef}
+      className={`relative w-full overflow-hidden bg-[color:var(--brand-deep)] ${className}`}
+    >
       <svg className="absolute inset-0 h-0 w-0">
         <defs>
           <filter id="glass-effect" x="-50%" y="-50%" width="200%" height="200%">
@@ -52,16 +85,18 @@ export function ShaderBackground({ children, className = "", variant = "hero" }:
       <MeshGradient
         className="absolute inset-0 h-full w-full"
         colors={colorsPrimary}
-        speed={0.4}
+        speed={primarySpeed}
         distortion={1}
         swirl={0.75}
+        maxPixelCount={MAX_PIXEL_COUNT}
       />
       <MeshGradient
         className="absolute inset-0 h-full w-full opacity-60 mix-blend-screen"
         colors={colorsOverlay}
-        speed={0.3}
+        speed={overlaySpeed}
         distortion={1.15}
         swirl={0.45}
+        maxPixelCount={MAX_PIXEL_COUNT}
       />
 
       {variant === "hero" && <HeroDrops />}
