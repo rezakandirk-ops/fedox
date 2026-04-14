@@ -199,6 +199,23 @@ export const services: Service[] = [
     image: "/images/baustelle.jpg",
     icon: HardHat,
   },
+  {
+    slug: "stein-pflasterreinigung",
+    title: "Stein- & Pflasterreinigung",
+    tagline: "Heißwasser bis 100 °C",
+    shortDescription:
+      "Moos, Algen und Schmutz gründlich entfernen — inkl. Fugenpflege, Neuverfugung und Versiegelung.",
+    longDescription:
+      "Mit unserer Heißwasserreinigung bis zu 100 °C entfernen wir Moos, Grünbelag, Algen und hartnäckigen Schmutz gründlich und materialschonend. Anschließend kümmern wir uns um die mechanische Unkrautentfernung sowie die Reinigung der Fugen und führen auf Wunsch eine Neuverfugung mit Quarzsand oder Polymer-Fugensand durch. Eine abschließende Imprägnierung bzw. Versiegelung schützt die Fläche vor Wasser und Schmutz, reduziert neuen Bewuchs und sorgt für ein gepflegtes Erscheinungsbild — mit Schutzwirkung von bis zu 2 bis 5 Jahren.",
+    bullets: [
+      "Heißwasserreinigung bis 100 °C",
+      "Mechanische Unkrautentfernung",
+      "Neuverfugung mit Quarz- oder Polymer-Fugensand",
+      "Imprägnierung mit 2 bis 5 Jahren Schutz",
+    ],
+    image: "/images/stein-pflaster.jpg",
+    icon: Droplets,
+  },
 ]
 
 export function getServiceBySlug(slug: string): Service | undefined {
