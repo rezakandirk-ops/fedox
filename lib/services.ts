@@ -233,6 +233,23 @@ export const services: Service[] = [
     image: "/images/gartenpflege.jpg",
     icon: Leaf,
   },
+  {
+    slug: "winterdienst",
+    title: "Winterdienst",
+    tagline: "Sicher durch die Wintersaison",
+    shortDescription:
+      "Zuverlässige Schneeräumung und Glättebekämpfung für Wege, Zufahrten und Außenflächen.",
+    longDescription:
+      "Wir sorgen im Winter für sichere und geräumte Wege, Zufahrten und Flächen — zuverlässig für Gewerbe- und Privatkunden. Ob Schneeräumung oder Glättebekämpfung, mit fedox Facility Service bleiben Ihre Außenbereiche sicher und gepflegt.",
+    bullets: [
+      "Schneeräumung und Glättebekämpfung",
+      "Wege, Zufahrten und Parkplätze",
+      "Rufbereitschaft in der Saison",
+      "Gewerbe und Privatkunden",
+    ],
+    image: "/images/winterdienst.jpg",
+    icon: Snowflake,
+  },
 ]
 
 export function getServiceBySlug(slug: string): Service | undefined {
