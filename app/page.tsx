@@ -58,7 +58,7 @@ export default function HomePage() {
 
             <div className="mt-14 grid w-full max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
               {[
-                { icon: CheckCircle2, label: "8 Leistungen aus einer Hand" },
+                { icon: CheckCircle2, label: "14 Leistungen aus einer Hand" },
                 { icon: ShieldCheck, label: "Versichert & zertifiziert" },
                 { icon: Clock, label: "Termintreu und zuverlässig" },
               ].map(({ icon: Icon, label }) => (
@@ -90,9 +90,10 @@ export default function HomePage() {
               Leistungen
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-              Acht Leistungen aus einer Hand — von der täglichen Büroreinigung bis
-              zum ganzheitlichen Gebäudemanagement. Wir decken das gesamte Spektrum
-              moderner Facility Services ab.
+              Vierzehn Leistungen aus einer Hand — von der täglichen Büroreinigung
+              über Winterdienst und Gartenpflege bis zum ganzheitlichen
+              Gebäudemanagement. Wir decken das gesamte Spektrum moderner Facility
+              Services ab.
             </p>
           </div>
 
