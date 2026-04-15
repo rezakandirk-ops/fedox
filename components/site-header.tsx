@@ -2,12 +2,12 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
-import { Menu, X, Phone, FileText } from "lucide-react"
+import { useState, useRef, useEffect } from "react"
+import { Menu, X, Phone, FileText, ChevronDown } from "lucide-react"
 import { contact } from "@/lib/contact"
+import { services } from "@/lib/services"
 
-const nav = [
-  { label: "Leistungen", href: "/#leistungen" },
+const navBase = [
   { label: "Über uns", href: "/#ueber-uns" },
   { label: "Referenzen", href: "/#referenzen" },
   { label: "Angebot", href: "/#angebot" },
@@ -15,6 +15,24 @@ const nav = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const handleEnter = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current)
+    setServicesOpen(true)
+  }
+  const handleLeave = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current)
+    closeTimer.current = setTimeout(() => setServicesOpen(false), 150)
+  }
+
+  useEffect(() => {
+    return () => {
+      if (closeTimer.current) clearTimeout(closeTimer.current)
+    }
+  }, [])
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-white/70 backdrop-blur-xl">
@@ -35,7 +53,76 @@ export function SiteHeader() {
         <div aria-hidden className="h-10 w-64 shrink-0" />
 
         <nav className="hidden items-center gap-1 md:flex">
-          {nav.map((item) => (
+          {/* LEISTUNGEN MEGA-DROPDOWN */}
+          <div
+            className="relative"
+            onMouseEnter={handleEnter}
+            onMouseLeave={handleLeave}
+          >
+            <button
+              type="button"
+              className="inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-[color:var(--brand-deep)] transition-colors hover:bg-[color:var(--brand-soft)]"
+              onClick={() => setServicesOpen((v) => !v)}
+              aria-expanded={servicesOpen}
+              aria-haspopup="menu"
+            >
+              Leistungen
+              <ChevronDown
+                className={`h-3.5 w-3.5 transition-transform ${
+                  servicesOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {servicesOpen && (
+              <div
+                role="menu"
+                className="absolute left-1/2 top-full z-50 mt-3 w-[680px] -translate-x-1/2 rounded-3xl border border-[color:var(--brand-soft)] bg-white/95 p-5 shadow-2xl shadow-[color:var(--brand)]/10 backdrop-blur-xl"
+              >
+                <div className="mb-4 flex items-center justify-between border-b border-[color:var(--brand-soft)] pb-3">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand-deep)]">
+                    Unsere Leistungen in Dortmund
+                  </p>
+                  <Link
+                    href="/#leistungen"
+                    className="text-xs font-medium text-[color:var(--brand)] hover:underline"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    Alle ansehen →
+                  </Link>
+                </div>
+                <ul className="grid grid-cols-2 gap-1">
+                  {services.map((s) => {
+                    const Icon = s.icon
+                    return (
+                      <li key={s.slug}>
+                        <Link
+                          href={`/leistungen/${s.slug}`}
+                          onClick={() => setServicesOpen(false)}
+                          role="menuitem"
+                          className="group flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[color:var(--brand-soft)]"
+                        >
+                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[color:var(--brand-soft)] text-[color:var(--brand)] transition-colors group-hover:bg-white">
+                            <Icon className="h-4 w-4" />
+                          </div>
+                          <div className="min-w-0">
+                            <p className="text-sm font-semibold leading-tight text-[color:var(--brand-deep)]">
+                              {s.title}
+                            </p>
+                            <p className="mt-0.5 truncate text-xs text-muted-foreground">
+                              {s.tagline}
+                            </p>
+                          </div>
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            )}
+          </div>
+
+          {navBase.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -76,7 +163,44 @@ export function SiteHeader() {
       {open && (
         <div className="border-t border-white/10 bg-white/95 backdrop-blur-xl md:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
-            {nav.map((item) => (
+            {/* MOBILE LEISTUNGEN */}
+            <button
+              type="button"
+              onClick={() => setMobileServicesOpen((v) => !v)}
+              className="flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium text-[color:var(--brand-deep)] hover:bg-[color:var(--brand-soft)]"
+              aria-expanded={mobileServicesOpen}
+            >
+              <span>Leistungen</span>
+              <ChevronDown
+                className={`h-4 w-4 transition-transform ${
+                  mobileServicesOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {mobileServicesOpen && (
+              <ul className="mb-2 ml-2 flex flex-col gap-1 border-l-2 border-[color:var(--brand-soft)] pl-3">
+                {services.map((s) => {
+                  const Icon = s.icon
+                  return (
+                    <li key={s.slug}>
+                      <Link
+                        href={`/leistungen/${s.slug}`}
+                        onClick={() => {
+                          setOpen(false)
+                          setMobileServicesOpen(false)
+                        }}
+                        className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-medium text-[color:var(--brand-deep)] hover:bg-[color:var(--brand-soft)]"
+                      >
+                        <Icon className="h-4 w-4 text-[color:var(--brand)]" />
+                        {s.title}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            )}
+
+            {navBase.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

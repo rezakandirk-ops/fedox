@@ -71,7 +71,7 @@ export function QuoteForm() {
             </p>
             <p className="mt-2 text-sm text-muted-foreground">
               Profitieren Sie von bis zu <strong>500 € Ersparnis</strong> auf
-              alle Reinigungsleistungen — gültig für die erste Beauftragung.
+              alle Reinigungsleistungen. Gültig für die erste Beauftragung.
             </p>
           </div>
         </aside>

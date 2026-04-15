@@ -90,7 +90,7 @@ export default function HomePage() {
               Leistungen
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-              Vierzehn Leistungen aus einer Hand — von der täglichen Büroreinigung
+              Vierzehn Leistungen aus einer Hand. Von der täglichen Büroreinigung
               über Winterdienst und Gartenpflege bis zum ganzheitlichen
               Gebäudemanagement. Wir decken das gesamte Spektrum moderner Facility
               Services ab.
@@ -101,8 +101,9 @@ export default function HomePage() {
             {services.map((service) => {
               const Icon = service.icon
               return (
-                <div
+                <Link
                   key={service.slug}
+                  href={`/leistungen/${service.slug}`}
                   className="group relative flex flex-col overflow-hidden rounded-3xl border border-[color:var(--brand-soft)] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[color:var(--brand-drop)]/40 hover:shadow-2xl hover:shadow-[color:var(--brand)]/10"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
@@ -130,15 +131,12 @@ export default function HomePage() {
                     <p className="text-sm leading-relaxed text-muted-foreground">
                       {service.shortDescription}
                     </p>
-                    <a
-                      href="#angebot"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand)] transition-all hover:gap-3"
-                    >
-                      Angebot anfragen
+                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand)] transition-all group-hover:gap-3">
+                      Mehr erfahren
                       <ArrowRight className="h-4 w-4" />
-                    </a>
+                    </span>
                   </div>
-                </div>
+                </Link>
               )
             })}
           </div>
@@ -200,10 +198,12 @@ export default function HomePage() {
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl">
               <Image
-                src="/images/hero-facility-manager.jpg"
+                src="/images/hero-facility-manager.png"
                 alt="fedox Team vor Ort"
                 fill
-                sizes="(min-width: 768px) 500px, 100vw"
+                sizes="(min-width: 768px) 720px, 100vw"
+                quality={95}
+                priority
                 className="object-cover"
               />
             </div>
