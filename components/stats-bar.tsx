@@ -8,17 +8,17 @@ const stats = [
 
 export function StatsBar() {
   return (
-    <section className="relative bg-gradient-to-r from-[color:var(--brand-deep)] via-[color:var(--brand)] to-[color:var(--brand-deep)] py-14">
-      <div className="mx-auto grid max-w-7xl gap-8 px-6 sm:grid-cols-2 lg:grid-cols-4">
+    <section className="relative bg-[color:var(--brand-soft)] py-16">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((s) => (
           <div
             key={s.label}
-            className="flex flex-col items-center text-center text-white"
+            className="flex flex-col items-center text-center"
           >
-            <span className="text-4xl font-bold tracking-tight sm:text-5xl">
+            <span className="text-4xl font-bold tracking-tight text-[color:var(--brand-deep)] sm:text-5xl">
               {s.value}
             </span>
-            <span className="mt-2 text-sm font-medium text-white/80">
+            <span className="mt-2 text-sm font-medium text-[color:var(--brand-deep)]/70">
               {s.label}
             </span>
           </div>

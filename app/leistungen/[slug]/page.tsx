@@ -11,12 +11,10 @@ import {
   Phone,
   Sparkles,
 } from "lucide-react"
-import { services, getServiceBySlug } from "@/lib/services"
+import { services, getServiceBySlug, getSubServices, topLevelServices } from "@/lib/services"
 import { getServiceDetail } from "@/lib/service-details"
 import { contact } from "@/lib/contact"
 import { QuoteForm } from "@/components/quote-form"
-import { WaveDivider } from "@/components/wave-divider"
-import { ShaderBackground } from "@/components/ui/hero-shader"
 
 type PageProps = {
   params: Promise<{ slug: string }>
@@ -66,7 +64,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const detail = getServiceDetail(slug)
   if (!service || !detail) notFound()
 
-  const related = services.filter((s) => s.slug !== slug).slice(0, 3)
+  const related = topLevelServices.filter((s) => s.slug !== slug).slice(0, 3)
+  const subServices = getSubServices(slug)
   const url = `${BASE_URL}/leistungen/${slug}`
   const image = `${BASE_URL}${service.heroImage}`
 
@@ -148,109 +147,99 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* HERO */}
-      <section className="relative">
-        <ShaderBackground className="relative">
-          <div className="relative z-10 mx-auto max-w-7xl px-6 pt-12 pb-32 lg:pt-16 lg:pb-40">
-            {/* Breadcrumbs */}
-            <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-sm text-white/70">
-              <Link href="/" className="inline-flex items-center gap-1 transition-colors hover:text-white">
-                <Home className="h-3.5 w-3.5" />
-                Startseite
-              </Link>
-              <ChevronRight className="h-3.5 w-3.5" />
-              <Link href="/#leistungen" className="transition-colors hover:text-white">
-                Leistungen
-              </Link>
-              <ChevronRight className="h-3.5 w-3.5" />
-              <span className="font-medium text-white">{service.title}</span>
-            </nav>
+      {/* HERO — clean, hell */}
+      <section className="relative bg-[color:var(--brand-soft)]/50">
+        <div className="relative mx-auto max-w-7xl px-6 pt-12 pb-20 lg:pt-16 lg:pb-24">
+          {/* Breadcrumbs */}
+          <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-sm text-[color:var(--brand-deep)]/70">
+            <Link href="/" className="inline-flex items-center gap-1 transition-colors hover:text-[color:var(--brand)]">
+              <Home className="h-3.5 w-3.5" />
+              Startseite
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5" />
+            <Link href="/#leistungen" className="transition-colors hover:text-[color:var(--brand)]">
+              Leistungen
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5" />
+            <span className="font-medium text-[color:var(--brand-deep)]">{service.title}</span>
+          </nav>
 
-            <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-              <div className="min-w-0">
-                <span
-                  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-md"
-                  style={{ filter: "url(#glass-effect)" }}
-                >
-                  <Sparkles className="h-3.5 w-3.5 text-[color:var(--brand-drop)]" />
-                  {service.tagline}
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="min-w-0">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[color:var(--brand-deep)] shadow-sm">
+                <Sparkles className="h-3.5 w-3.5 text-[color:var(--brand)]" />
+                {service.tagline}
+              </span>
+
+              <h1
+                lang="de"
+                className="mt-5 hyphens-auto break-words text-balance text-3xl font-bold leading-[1.15] tracking-tight text-[color:var(--brand-deep)] sm:text-4xl lg:text-[2.5rem] xl:text-5xl"
+              >
+                {service.title}
+                <span className="mt-1 block text-2xl text-[color:var(--brand)] sm:text-3xl lg:text-[2rem] xl:text-4xl">
+                  in Dortmund
                 </span>
+              </h1>
 
-                <h1
-                  lang="de"
-                  className="mt-5 hyphens-auto break-words text-balance text-3xl font-bold leading-[1.15] tracking-tight text-white sm:text-4xl lg:text-[2.5rem] xl:text-5xl"
+              <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-muted-foreground">
+                {detail.intro}
+              </p>
+
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <Link
+                  href="#angebot"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--brand)] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[color:var(--brand)]/30 transition-all hover:bg-[color:var(--brand-deep)] hover:shadow-xl"
                 >
-                  {service.title}
-                  <span className="mt-1 block bg-gradient-to-r from-[color:var(--brand-drop)] via-white to-[color:var(--brand-drop)] bg-clip-text text-2xl text-transparent sm:text-3xl lg:text-[2rem] xl:text-4xl">
-                    in Dortmund
-                  </span>
-                </h1>
-
-                <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-white/85">
-                  {detail.intro}
-                </p>
-
-                <div className="mt-8 flex flex-wrap items-center gap-3">
-                  <Link
-                    href="#angebot"
-                    className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-[color:var(--brand-deep)] shadow-xl shadow-black/20 transition-all hover:shadow-2xl hover:shadow-black/30"
-                  >
-                    Kostenloses Angebot
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                  <a
-                    href={`tel:${contact.phoneTel}`}
-                    className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20"
-                  >
-                    <Phone className="h-4 w-4" />
-                    {contact.phone}
-                  </a>
-                </div>
-
-                <div className="mt-8 flex flex-wrap items-center gap-6 text-xs text-white/80">
-                  <span className="inline-flex items-center gap-1.5">
-                    <CheckCircle2 className="h-4 w-4 text-[color:var(--brand-drop)]" />
-                    Versichert &amp; zertifiziert
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <CheckCircle2 className="h-4 w-4 text-[color:var(--brand-drop)]" />
-                    Termintreu
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <CheckCircle2 className="h-4 w-4 text-[color:var(--brand-drop)]" />
-                    Aus Dortmund für Dortmund
-                  </span>
-                </div>
+                  Kostenloses Angebot
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <a
+                  href={`tel:${contact.phoneTel}`}
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-[color:var(--brand-deep)] shadow-sm transition-all hover:shadow-md"
+                >
+                  <Phone className="h-4 w-4 text-[color:var(--brand)]" />
+                  {contact.phone}
+                </a>
               </div>
 
-              <div className="relative">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-white/15 shadow-2xl shadow-black/30">
-                  <Image
-                    src={service.heroImage}
-                    alt={`${service.title} in Dortmund | fedox Facility Services`}
-                    fill
-                    sizes="(min-width: 1024px) 600px, 100vw"
-                    className="object-cover"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[color:var(--brand-deep)]/30 via-transparent to-transparent" />
-                </div>
-                <div className="absolute -bottom-6 -left-6 hidden w-64 rounded-2xl border border-white/20 bg-white/95 p-5 shadow-xl backdrop-blur-md lg:block">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">
-                    fedox in Dortmund
-                  </p>
-                  <p className="mt-1 text-sm leading-snug text-[color:var(--brand-deep)]">
-                    Zuverlässig, termintreu und mit festem Ansprechpartner seit 2020.
-                  </p>
-                </div>
+              <div className="mt-8 flex flex-wrap items-center gap-6 text-xs text-[color:var(--brand-deep)]/80">
+                <span className="inline-flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-[color:var(--brand)]" />
+                  Versichert &amp; zertifiziert
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-[color:var(--brand)]" />
+                  Termintreu
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-[color:var(--brand)]" />
+                  Aus Dortmund für Dortmund
+                </span>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-3xl shadow-2xl">
+                <Image
+                  src={service.heroImage}
+                  alt={`${service.title} in Dortmund | fedox Facility Services`}
+                  fill
+                  sizes="(min-width: 1024px) 600px, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="absolute -bottom-6 -left-6 hidden w-64 rounded-2xl border border-[color:var(--brand-soft)] bg-white p-5 shadow-xl lg:block">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">
+                  fedox in Dortmund
+                </p>
+                <p className="mt-1 text-sm leading-snug text-[color:var(--brand-deep)]">
+                  Zuverlässig, termintreu und mit festem Ansprechpartner seit 2020.
+                </p>
               </div>
             </div>
           </div>
-
-          <div className="absolute inset-x-0 bottom-0 z-10">
-            <WaveDivider color="#ffffff" />
-          </div>
-        </ShaderBackground>
+        </div>
       </section>
 
       {/* MAIN CONTENT MIT TOC */}
@@ -442,19 +431,18 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* VERWANDTE LEISTUNGEN */}
-      <section className="bg-[color:var(--brand-soft)]/40 py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold tracking-tight text-[color:var(--brand-deep)] sm:text-4xl">
-            Weitere Leistungen aus einer Hand
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            Für unsere Dortmunder Kunden bündeln wir gerne mehrere Leistungen zu einem Gesamtpaket. Das spart Zeit, Koordination und am Ende auch Geld.
-          </p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {related.map((s) => {
-              const Icon = s.icon
-              return (
+      {/* SUB-SERVICES (z. B. Gebäudemanagement) */}
+      {subServices.length > 0 && (
+        <section className="bg-[color:var(--brand-soft)]/40 py-20">
+          <div className="mx-auto max-w-7xl px-6">
+            <h2 className="text-3xl font-bold tracking-tight text-[color:var(--brand-deep)] sm:text-4xl">
+              Inklusive im {service.title}
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
+              Diese Leistungen sind fester Bestandteil unseres {service.title.toLowerCase()}s und können einzeln oder im Paket gebucht werden.
+            </p>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {subServices.map((s) => (
                 <Link
                   key={s.slug}
                   href={`/leistungen/${s.slug}`}
@@ -468,26 +456,59 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                       sizes="(min-width: 1024px) 400px, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--brand-deep)]/70 via-[color:var(--brand-deep)]/10 to-transparent" />
-                    <div className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white/95 shadow-md">
-                      <Icon className="h-4 w-4 text-[color:var(--brand)]" />
-                    </div>
                   </div>
                   <div className="flex flex-1 flex-col gap-3 p-6">
                     <h3 className="text-lg font-bold leading-tight text-[color:var(--brand-deep)]">
                       {s.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      {s.shortDescription}
-                    </p>
                     <span className="mt-auto inline-flex items-center gap-1 text-sm font-semibold text-[color:var(--brand)]">
                       Details ansehen
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>
                 </Link>
-              )
-            })}
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* VERWANDTE LEISTUNGEN */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-3xl font-bold tracking-tight text-[color:var(--brand-deep)] sm:text-4xl">
+            Weitere Leistungen aus einer Hand
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
+            Für unsere Dortmunder Kunden bündeln wir gerne mehrere Leistungen zu einem Gesamtpaket. Das spart Zeit, Koordination und am Ende auch Geld.
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {related.map((s) => (
+              <Link
+                key={s.slug}
+                href={`/leistungen/${s.slug}`}
+                className="group relative flex flex-col overflow-hidden rounded-3xl border border-[color:var(--brand-soft)] bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={s.heroImage}
+                    alt={s.title}
+                    fill
+                    sizes="(min-width: 1024px) 400px, 50vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col gap-3 p-6">
+                  <h3 className="text-lg font-bold leading-tight text-[color:var(--brand-deep)]">
+                    {s.title}
+                  </h3>
+                  <span className="mt-auto inline-flex items-center gap-1 text-sm font-semibold text-[color:var(--brand)]">
+                    Details ansehen
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

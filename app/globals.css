@@ -157,8 +157,14 @@
   animation: marquee 40s linear infinite;
 }
 
+.animate-marquee-slow {
+  animation: marquee 60s linear infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee { animation: none; }
+  .animate-marquee,
+  .animate-marquee-slow { animation: none; }
 }
 
 @keyframes hero-drop-rise {

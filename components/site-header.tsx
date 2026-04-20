@@ -5,7 +5,7 @@ import Image from "next/image"
 import { useState, useRef, useEffect } from "react"
 import { Menu, X, Phone, FileText, ChevronDown } from "lucide-react"
 import { contact } from "@/lib/contact"
-import { services } from "@/lib/services"
+import { services, topLevelServices, getSubServices } from "@/lib/services"
 
 const navBase = [
   { label: "Über uns", href: "/#ueber-uns" },
@@ -77,7 +77,7 @@ export function SiteHeader() {
             {servicesOpen && (
               <div
                 role="menu"
-                className="absolute left-1/2 top-full z-50 mt-3 w-[680px] -translate-x-1/2 rounded-3xl border border-[color:var(--brand-soft)] bg-white/95 p-5 shadow-2xl shadow-[color:var(--brand)]/10 backdrop-blur-xl"
+                className="absolute left-1/2 top-full z-50 mt-3 w-[720px] -translate-x-1/2 rounded-3xl border border-[color:var(--brand-soft)] bg-white/95 p-5 shadow-2xl shadow-[color:var(--brand)]/10 backdrop-blur-xl"
               >
                 <div className="mb-4 flex items-center justify-between border-b border-[color:var(--brand-soft)] pb-3">
                   <p className="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand-deep)]">
@@ -92,8 +92,9 @@ export function SiteHeader() {
                   </Link>
                 </div>
                 <ul className="grid grid-cols-2 gap-1">
-                  {services.map((s) => {
+                  {topLevelServices.map((s) => {
                     const Icon = s.icon
+                    const subs = s.slug === "gebaeudemanagement" ? getSubServices(s.slug) : []
                     return (
                       <li key={s.slug}>
                         <Link
@@ -114,6 +115,25 @@ export function SiteHeader() {
                             </p>
                           </div>
                         </Link>
+                        {subs.length > 0 && (
+                          <ul className="mt-1 ml-12 flex flex-col gap-0.5 border-l border-[color:var(--brand-soft)] pl-3">
+                            {subs.map((sub) => {
+                              const SubIcon = sub.icon
+                              return (
+                                <li key={sub.slug}>
+                                  <Link
+                                    href={`/leistungen/${sub.slug}`}
+                                    onClick={() => setServicesOpen(false)}
+                                    className="flex items-center gap-2 rounded-md px-2 py-1.5 text-xs font-medium text-[color:var(--brand-deep)]/80 transition-colors hover:bg-[color:var(--brand-soft)] hover:text-[color:var(--brand-deep)]"
+                                  >
+                                    <SubIcon className="h-3.5 w-3.5 text-[color:var(--brand)]" />
+                                    {sub.title}
+                                  </Link>
+                                </li>
+                              )
+                            })}
+                          </ul>
+                        )}
                       </li>
                     )
                   })}
@@ -136,14 +156,14 @@ export function SiteHeader() {
         <div className="hidden items-center gap-2 md:flex">
           <a
             href={`tel:${contact.phoneTel}`}
-            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-deep)]/15 bg-white px-4 py-2.5 text-sm font-semibold text-[color:var(--brand-deep)] transition-all hover:border-[color:var(--brand)]/40 hover:bg-[color:var(--brand-soft)]"
+            className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-soft)] px-5 py-2.5 text-sm font-semibold text-[color:var(--brand-deep)] transition-all hover:bg-white hover:shadow-sm"
           >
-            <Phone className="h-4 w-4" />
+            <Phone className="h-4 w-4 text-[color:var(--brand)]" />
             Anrufen
           </a>
           <Link
             href="/#angebot"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[color:var(--brand-deep)] to-[color:var(--brand)] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[color:var(--brand)]/20 transition-all hover:shadow-xl hover:shadow-[color:var(--brand)]/30"
+            className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand)] px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-[color:var(--brand)]/20 transition-all hover:bg-[color:var(--brand-deep)] hover:shadow-lg"
           >
             <FileText className="h-4 w-4" />
             Angebot

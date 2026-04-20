@@ -27,6 +27,7 @@ export type Service = {
   image: string
   heroImage: string
   icon: LucideIcon
+  parent?: string
 }
 
 export const services: Service[] = [
@@ -245,6 +246,7 @@ export const services: Service[] = [
     image: "/images/services/gartenpflege.png",
     heroImage: "/images/services/gartenpflege.png",
     icon: Leaf,
+    parent: "gebaeudemanagement",
   },
   {
     slug: "winterdienst",
@@ -263,6 +265,7 @@ export const services: Service[] = [
     image: "/images/services/winterdienst.png",
     heroImage: "/images/services/winterdienst.png",
     icon: Snowflake,
+    parent: "gebaeudemanagement",
   },
   {
     slug: "entruempelung",
@@ -281,9 +284,16 @@ export const services: Service[] = [
     image: "/images/services/entruempelung.png",
     heroImage: "/images/services/entruempelung.png",
     icon: Truck,
+    parent: "gebaeudemanagement",
   },
 ]
 
 export function getServiceBySlug(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug)
+}
+
+export const topLevelServices: Service[] = services.filter((s) => !s.parent)
+
+export function getSubServices(parentSlug: string): Service[] {
+  return services.filter((s) => s.parent === parentSlug)
 }
