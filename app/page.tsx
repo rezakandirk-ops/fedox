@@ -16,8 +16,16 @@ export default function HomePage() {
     <>
       {/* HERO — Split-Layout: links Blau-Block, rechts Foto, weiche Naht */}
       <section className="relative isolate overflow-hidden bg-[color:var(--brand-deep)]">
-        {/* Foto als Hintergrund auf der rechten Seite */}
-        <div className="absolute inset-y-0 right-0 -z-0 w-full md:w-[62%]">
+        {/* Foto rechts, per CSS-mask weich nach links ausgeblendet — keine container-kante */}
+        <div
+          className="absolute inset-y-0 right-0 -z-0 w-full md:w-[62%]"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 12%, rgba(0,0,0,0.55) 28%, black 50%)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 12%, rgba(0,0,0,0.55) 28%, black 50%)",
+          }}
+        >
           <Image
             src="/images/hero-vacuum-horizontal.png"
             alt="Professionelle Gebäudereinigung – Staubsauger auf blauem Teppich"
@@ -26,14 +34,6 @@ export default function HomePage() {
             quality={90}
             sizes="(min-width: 768px) 62vw, 100vw"
             className="rotate-180 object-cover object-center"
-          />
-          {/* Weicher Übergang Blau -> Foto von links */}
-          <div
-            className="pointer-events-none absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to right, var(--brand-deep) 0%, var(--brand-deep) 8%, rgba(11,59,111,0.85) 22%, rgba(11,59,111,0.35) 40%, rgba(11,59,111,0) 62%)",
-            }}
           />
           {/* Dezente Verdunklung unten fuer die Welle */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[color:var(--brand-deep)]/50 to-transparent" />
