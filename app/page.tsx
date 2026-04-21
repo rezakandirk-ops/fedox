@@ -21,13 +21,13 @@ export default function HomePage() {
           className="absolute inset-0 -z-0"
           style={{
             maskImage:
-              "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 18%, rgba(0,0,0,0.6) 32%, black 50%)",
+              "linear-gradient(to right, transparent 0%, transparent 32%, rgba(0,0,0,0.4) 45%, black 60%)",
             WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 18%, rgba(0,0,0,0.6) 32%, black 50%)",
+              "linear-gradient(to right, transparent 0%, transparent 32%, rgba(0,0,0,0.4) 45%, black 60%)",
           }}
         >
           <Image
-            src="/images/hero-staubsauger.png"
+            src="/images/hero-staubsauger-v3.png"
             alt="Professionelle Gebäudereinigung – Staubsauger auf blauem Teppich"
             fill
             priority
