@@ -60,7 +60,7 @@ export function SiteFooter() {
         <div className="relative mx-auto max-w-7xl px-6 py-16">
           <div className="grid gap-12 md:grid-cols-4">
             <div className="md:col-span-1">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-white/90">
+              <h3 className="text-lg font-semibold tracking-tight text-white">
                 fedox Facility Services
               </h3>
               <p className="mt-6 max-w-xs text-sm leading-relaxed text-white/70">

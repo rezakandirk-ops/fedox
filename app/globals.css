@@ -57,7 +57,7 @@
   --brand: #1E6BB8;         /* Haupt-Blau */
   --brand-deep: #0B3B6F;    /* Deep Navy aus Logo-Typo */
   --brand-drop: #3FA9F5;    /* Helles Tropfen-Cyan */
-  --brand-soft: #E8F2FB;    /* Soft Background */
+  --brand-soft: #C7DDEF;    /* Soft Background */
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.205 0.04 250);

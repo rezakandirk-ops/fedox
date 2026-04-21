@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Phone, CheckCircle2, ShieldCheck, Clock } from "lucide-react"
+import { ArrowRight, Phone, CheckCircle2 } from "lucide-react"
 import { StatsBar } from "@/components/stats-bar"
 import { ReferenceMarquee } from "@/components/reference-marquee"
 import { ServicesMarquee } from "@/components/services-marquee"
@@ -14,82 +14,67 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HERO — Bild-basiert, clean */}
-      <section className="relative isolate overflow-hidden bg-[color:var(--brand-soft)]">
-        <div className="absolute inset-0 -z-10">
+      {/* HERO — Split-Layout: links Blau-Block, rechts Foto, weiche Naht */}
+      <section className="relative isolate overflow-hidden bg-[color:var(--brand-deep)]">
+        {/* Foto als Hintergrund auf der rechten Seite */}
+        <div className="absolute inset-y-0 right-0 -z-0 w-full md:w-[62%]">
           <Image
-            src="/images/hero-fedox-team.png"
-            alt="Das Team von fedox Facility Services in Dortmund"
+            src="/images/hero-vacuum-horizontal.png"
+            alt="Professionelle Gebäudereinigung – Staubsauger auf blauem Teppich"
             fill
             priority
             quality={90}
-            sizes="100vw"
-            className="object-cover object-[70%_center]"
+            sizes="(min-width: 768px) 62vw, 100vw"
+            className="rotate-180 object-cover object-center"
           />
-          {/* Weißer Fade oben (Kopfzeile), dezenter Verlauf links für Text-Lesbarkeit */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-transparent to-[color:var(--brand-deep)]/30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/75 via-white/10 to-transparent md:from-white/80 md:via-white/5" />
+          {/* Weicher Übergang Blau -> Foto von links */}
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to right, var(--brand-deep) 0%, var(--brand-deep) 8%, rgba(11,59,111,0.85) 22%, rgba(11,59,111,0.35) 40%, rgba(11,59,111,0) 62%)",
+            }}
+          />
+          {/* Dezente Verdunklung unten fuer die Welle */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[color:var(--brand-deep)]/50 to-transparent" />
         </div>
 
-        <div className="relative mx-auto flex min-h-[680px] max-w-7xl flex-col items-start justify-center px-6 pt-28 pb-32">
-          <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[color:var(--brand-deep)] shadow-sm">
-            Facility Services in Dortmund
-          </span>
-
-          <h1
-            className="max-w-xl text-balance text-5xl font-bold leading-[1.05] tracking-tight text-[color:var(--brand-deep)] sm:text-6xl md:text-7xl"
-            style={{ textShadow: "0 2px 20px rgba(255,255,255,0.9), 0 0 8px rgba(255,255,255,0.7)" }}
-          >
-            Gebäudereinigung
-            <br />
-            <span className="text-[color:var(--brand)]">in Dortmund</span>
-          </h1>
-
-          <p
-            className="mt-6 max-w-lg text-balance text-lg font-medium leading-relaxed text-[color:var(--brand-deep)]"
-            style={{ textShadow: "0 1px 12px rgba(255,255,255,0.95), 0 0 4px rgba(255,255,255,0.8)" }}
-          >
-            Sauberkeit, Werterhalt und zuverlässiger Service – aus einer Hand.
-            Ihr Facility-Partner für Büro, Gewerbe und Wohnobjekte.
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            <Link
-              href="#angebot"
-              className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--brand)] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[color:var(--brand)]/30 transition-all hover:bg-[color:var(--brand-deep)] hover:shadow-xl"
+        <div className="relative z-10 mx-auto flex min-h-[640px] max-w-7xl items-center px-6 pt-28 pb-32">
+          <div className="w-full">
+            <h1
+              className="text-4xl font-semibold leading-[1.05] tracking-[-0.025em] text-white sm:text-5xl md:text-[72px] md:leading-[1]"
+              style={{ textShadow: "0 2px 24px rgba(11,59,111,0.55), 0 0 1px rgba(11,59,111,0.4)" }}
             >
-              Angebot anfragen
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <a
-              href={`tel:${contact.phoneTel}`}
-              className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[color:var(--brand-deep)] shadow-lg transition-all hover:bg-[color:var(--brand-soft)]"
-            >
-              <Phone className="h-4 w-4 text-[color:var(--brand)]" />
-              {contact.phone}
-            </a>
-          </div>
+              Gebäudereinigung
+              <br />
+              <span className="font-light text-[color:var(--brand-drop)]">in Dortmund</span>
+            </h1>
 
-          <div className="mt-12 grid w-full max-w-xl grid-cols-1 gap-3">
-            {[
-              { icon: CheckCircle2, label: "Leistungen aus einer Hand" },
-              { icon: ShieldCheck, label: "Versichert & zertifiziert" },
-              { icon: Clock, label: "Termintreu und zuverlässig" },
-            ].map(({ icon: Icon, label }) => (
-              <div
-                key={label}
-                className="flex items-center gap-3 rounded-2xl bg-white/90 px-4 py-3 shadow-sm ring-1 ring-[color:var(--brand-soft)] backdrop-blur-sm"
+            <p className="mt-6 max-w-md text-balance text-base font-normal leading-relaxed text-white/85 md:text-lg">
+              Sauberkeit, Werterhalt und zuverlässiger Service – aus einer Hand.
+              Ihr Facility-Partner für Büro, Gewerbe und Wohnobjekte.
+            </p>
+
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <Link
+                href="#angebot"
+                className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--brand)] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/20 transition-all hover:bg-white hover:text-[color:var(--brand-deep)] hover:shadow-xl"
               >
-                <Icon className="h-5 w-5 shrink-0 text-[color:var(--brand)]" />
-                <span className="text-sm font-medium text-[color:var(--brand-deep)]">
-                  {label}
-                </span>
-              </div>
-            ))}
+                Angebot anfragen
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <a
+                href={`tel:${contact.phoneTel}`}
+                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-7 py-3.5 text-sm font-semibold text-white ring-1 ring-inset ring-white/25 backdrop-blur-sm transition-all hover:bg-white hover:text-[color:var(--brand-deep)]"
+              >
+                <Phone className="h-4 w-4" />
+                {contact.phone}
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 z-10">
+        <div className="absolute inset-x-0 bottom-0 z-20">
           <WaveDivider color="#ffffff" />
         </div>
       </section>

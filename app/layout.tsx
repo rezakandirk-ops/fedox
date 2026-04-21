@@ -17,11 +17,49 @@ const geistMono = Geist_Mono({
   display: "swap",
 })
 
+const siteTitle = "fedox Facility Services | Sauberkeit und Werterhalt aus einer Hand"
+const siteDescription =
+  "Ihr Partner für Sauberkeit und Werterhalt in Dortmund und Umgebung. Unterhalts-, Glas-, Fassaden- und Sonderreinigung sowie Gebäudemanagement. Jetzt 15 % Neukundenrabatt sichern."
+
 export const metadata: Metadata = {
-  title: "fedox Facility Services | Sauberkeit und Werterhalt aus einer Hand",
-  description:
-    "Ihr Partner für Sauberkeit und Werterhalt in Dortmund und Umgebung. Unterhalts-, Glas-, Fassaden- und Sonderreinigung sowie Gebäudemanagement. Jetzt 15 % Neukundenrabatt sichern.",
   metadataBase: new URL("https://fedox-facilityservices.de"),
+  title: {
+    default: siteTitle,
+    template: "%s | fedox Facility Services",
+  },
+  description: siteDescription,
+  applicationName: "fedox Facility Services",
+  authors: [{ name: "fedox Facility Services" }],
+  keywords: [
+    "Gebäudereinigung Dortmund",
+    "Facility Services",
+    "Büroreinigung",
+    "Fassadenreinigung",
+    "Gebäudemanagement",
+    "Winterdienst Dortmund",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    url: "https://fedox-facilityservices.de",
+    siteName: "fedox Facility Services",
+    title: siteTitle,
+    description: siteDescription,
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "fedox Facility Services – Ihr Team für Gebäudereinigung in Dortmund",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: ["/og-image.jpg"],
+  },
 }
 
 export default function RootLayout({
