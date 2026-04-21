@@ -16,27 +16,27 @@ export default function HomePage() {
     <>
       {/* HERO — Split-Layout: links Blau-Block, rechts Foto, weiche Naht */}
       <section className="relative isolate overflow-hidden bg-[color:var(--brand-deep)]">
-        {/* Foto rechts, per CSS-mask weich nach links ausgeblendet — keine container-kante */}
+        {/* Foto volle breite, links weich ausgefadet damit der text vor dem section-blau steht */}
         <div
-          className="absolute inset-y-0 right-0 -z-0 w-full md:w-[62%]"
+          className="absolute inset-0 -z-0"
           style={{
             maskImage:
-              "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 12%, rgba(0,0,0,0.55) 28%, black 50%)",
+              "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 18%, rgba(0,0,0,0.6) 32%, black 50%)",
             WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 12%, rgba(0,0,0,0.55) 28%, black 50%)",
+              "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 18%, rgba(0,0,0,0.6) 32%, black 50%)",
           }}
         >
           <Image
-            src="/images/hero-vacuum-horizontal.png"
+            src="/images/hero-staubsauger.png"
             alt="Professionelle Gebäudereinigung – Staubsauger auf blauem Teppich"
             fill
             priority
             quality={90}
-            sizes="(min-width: 768px) 62vw, 100vw"
-            className="rotate-180 object-cover object-center"
+            sizes="100vw"
+            className="object-cover object-center"
           />
           {/* Dezente Verdunklung unten fuer die Welle */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[color:var(--brand-deep)]/50 to-transparent" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[color:var(--brand-deep)]/60 to-transparent" />
         </div>
 
         <div className="relative z-10 mx-auto flex min-h-[640px] max-w-7xl items-center px-6 pt-28 pb-32">
