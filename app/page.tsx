@@ -16,16 +16,8 @@ export default function HomePage() {
     <>
       {/* HERO — Split-Layout: links Blau-Block, rechts Foto, weiche Naht */}
       <section className="relative isolate overflow-hidden bg-[color:var(--brand-deep)]">
-        {/* Foto volle breite, links weich ausgefadet damit der text vor dem section-blau steht */}
-        <div
-          className="absolute inset-0 -z-0"
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent 0%, transparent 32%, rgba(0,0,0,0.4) 45%, black 60%)",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, transparent 32%, rgba(0,0,0,0.4) 45%, black 60%)",
-          }}
-        >
+        {/* Foto volle breite — mobile: vertikaler fade (saugkopf unten), desktop: horizontaler fade (saugkopf rechts) */}
+        <div className="hero-image-mask absolute inset-0 -z-0">
           <Image
             src="/images/hero-staubsauger-v3.png"
             alt="Professionelle Gebäudereinigung – Staubsauger auf blauem Teppich"
@@ -33,7 +25,7 @@ export default function HomePage() {
             priority
             quality={90}
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-[72%_center] md:object-center"
           />
           {/* Dezente Verdunklung unten fuer die Welle */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[color:var(--brand-deep)]/60 to-transparent" />
