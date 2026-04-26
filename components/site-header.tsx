@@ -43,7 +43,7 @@ export function SiteHeader() {
         >
           <Image
             src="/logo/fedox-logo.png"
-            alt="fedox Facility Services"
+            alt="Fedox Facility Services"
             width={720}
             height={216}
             className="pointer-events-none h-48 w-auto drop-shadow-sm"

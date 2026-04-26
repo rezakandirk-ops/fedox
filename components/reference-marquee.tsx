@@ -14,10 +14,10 @@ const referenzen: LogoItem[] = [
 ]
 
 const zertifikate: LogoItem[] = [
-  { src: "/logo/cert/bgbau.svg", alt: "BG BAU Berufsgenossenschaft" },
-  { src: "/logo/cert/hwk-dortmund.svg", alt: "Handwerkskammer Dortmund" },
-  { src: "/logo/cert/ihk-dortmund.svg", alt: "IHK Dortmund" },
-  { src: "/logo/cert/gebaeudereiniger-innung.svg", alt: "Gebäudereiniger-Innung Dortmund" },
+  { src: "/logo/cert/bgbau.jpg", alt: "BG BAU Berufsgenossenschaft der Bauwirtschaft" },
+  { src: "/logo/cert/gebaeudedienstleister.jpg", alt: "Die Gebäudedienstleister" },
+  { src: "/logo/cert/ihk-dortmund.jpg", alt: "IHK Dortmund" },
+  { src: "/logo/cert/gebaeudereiniger-innung.jpg", alt: "Gebäudereiniger-Handwerk" },
 ]
 
 function Track({ items }: { items: LogoItem[] }) {
@@ -28,14 +28,14 @@ function Track({ items }: { items: LogoItem[] }) {
         {loop.map((logo, i) => (
           <div
             key={`${logo.src}-${i}`}
-            className="flex h-20 w-40 shrink-0 items-center justify-center rounded-2xl bg-white px-4"
+            className="flex h-28 w-56 shrink-0 items-center justify-center rounded-2xl bg-white px-5"
           >
             <Image
               src={logo.src}
               alt={logo.alt}
-              width={160}
-              height={80}
-              className="max-h-12 w-auto object-contain mix-blend-multiply"
+              width={240}
+              height={120}
+              className="max-h-20 w-auto object-contain mix-blend-multiply"
             />
           </div>
         ))}

@@ -21,7 +21,7 @@ export type ServiceDetail = {
 
 export const serviceDetails: Record<string, ServiceDetail> = {
   "unterhalts-buerorein": {
-    seoTitle: "Unterhaltsreinigung & Büroreinigung Dortmund | fedox Facility Services",
+    seoTitle: "Unterhaltsreinigung & Büroreinigung Dortmund | Fedox Facility Services",
     seoDescription:
       "Professionelle Unterhalts- & Büroreinigung in Dortmund. Zuverlässig, termintreu, individuell abgestimmt. Jetzt kostenloses Angebot anfordern.",
     keywords: [
@@ -32,7 +32,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Gewerbereinigung Dortmund",
     ],
     intro:
-      "Saubere Büros sind in Dortmund ein Aushängeschild. Für Mitarbeiter genauso wie für Kunden. Wir von fedox übernehmen die Unterhalts- und Büroreinigung für Unternehmen im gesamten Dortmunder Stadtgebiet: zuverlässig, diskret und exakt in den Intervallen, die zu Ihrem Betriebsablauf passen. Vom kleinen Agenturbüro in der City bis zur Verwaltungsetage im Technologiepark.",
+      "Saubere Büros sind in Dortmund ein Aushängeschild. Für Mitarbeiter genauso wie für Kunden. Wir von Fedox übernehmen die Unterhalts- und Büroreinigung für Unternehmen im gesamten Dortmunder Stadtgebiet: zuverlässig, diskret und exakt in den Intervallen, die zu Ihrem Betriebsablauf passen. Vom kleinen Agenturbüro in der City bis zur Verwaltungsetage im Technologiepark.",
     paragraphs: [
       "Eine gut organisierte Büroreinigung in Dortmund ist kein Kostenfaktor, sondern eine Investition in Gesundheit, Motivation und den Eindruck, den Ihr Unternehmen hinterlässt. Staub auf Oberflächen, Fingerabdrücke auf Glastüren und unsaubere Sanitärbereiche fallen Besuchern sofort auf. Und wirken noch lange nach. Wir schaffen mit klar definierten Leistungsverzeichnissen und festen Ansprechpartnern eine Reinigungsqualität, die Sie nicht überwachen müssen.",
       "Unsere Dortmunder Teams reinigen Arbeitsplätze, Besprechungsräume, Teeküchen, Sanitäranlagen, Empfangsbereiche und Verkehrswege nach einem auf Ihr Objekt zugeschnittenen Plan. Wir arbeiten mit farbcodierten Mikrofasersystemen, umweltverträglichen Reinigungsmitteln und dosiergenauen Geräten. So vermeiden wir Kreuzkontamination und schonen sowohl Oberflächen als auch Ressourcen. Für die tägliche oder mehrmals wöchentliche Reinigung stellen wir feste Teams, damit Ihre Mitarbeiter bekannte Gesichter sehen und Abläufe sich einspielen.",
@@ -121,13 +121,13 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       {
         question: "Sind Sie versichert?",
         answer:
-          "Ja, fedox ist vollständig haftpflicht-, sachschaden- und schlüsselversichert. Details senden wir Ihnen gerne mit dem Angebot zu.",
+          "Ja, Fedox ist vollständig haftpflicht-, sachschaden- und schlüsselversichert. Details senden wir Ihnen gerne mit dem Angebot zu.",
       },
     ],
   },
 
   "glas-rahmenreinigung": {
-    seoTitle: "Glas- & Rahmenreinigung Dortmund | fedox Facility Services",
+    seoTitle: "Glas- & Rahmenreinigung Dortmund | Fedox Facility Services",
     seoDescription:
       "Streifenfreie Glas- und Rahmenreinigung in Dortmund. Innen und außen, Privat und Gewerbe. Jetzt kostenloses Angebot anfordern.",
     keywords: [
@@ -138,7 +138,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Fensterputzer Dortmund Gewerbe",
     ],
     intro:
-      "Saubere Fenster sind der erste Eindruck, den ein Dortmunder Gebäude hinterlässt. Und zugleich der am schnellsten unterschätzte. Staub, Pollen, Regenränder und die hohe Feinstaubbelastung an Hauptstraßen wie dem Wallring setzen Glasflächen ständig zu. fedox reinigt Fenster, Rahmen und Fensterbänke streifenfrei, materialschonend und termintreu. Vom Einfamilienhaus in Aplerbeck bis zur Glasfassade am Phoenix-See.",
+      "Saubere Fenster sind der erste Eindruck, den ein Dortmunder Gebäude hinterlässt. Und zugleich der am schnellsten unterschätzte. Staub, Pollen, Regenränder und die hohe Feinstaubbelastung an Hauptstraßen wie dem Wallring setzen Glasflächen ständig zu. Fedox reinigt Fenster, Rahmen und Fensterbänke streifenfrei, materialschonend und termintreu. Vom Einfamilienhaus in Aplerbeck bis zur Glasfassade am Phoenix-See.",
     paragraphs: [
       "Fenster bestehen aus deutlich mehr als nur Glas. Gummi- und Silikondichtungen, Rahmenprofile aus Aluminium oder Kunststoff und die Falze sammeln über die Zeit Schmutz, der bei einer reinen Glasreinigung übersehen wird. Wir reinigen das komplette Fensterelement: Glas innen und außen, Rahmen, Griffe, Falze und Fensterbänke. So bleibt Ihr Fenster nicht nur optisch perfekt, sondern technisch länger intakt, Dichtungen bleiben elastisch, Beschläge gängig.",
       "Für die Glasreinigung in Dortmund nutzen wir klassische Einwischer-Technik für bodennahe Flächen und professionelle Reinstwasser-Teleskopsysteme für Fensterbänder und Fassaden in Höhen bis rund 15 Metern. Das spart Gerüste, ist leiser und hinterlässt keinerlei Streifen. Bei anspruchsvolleren Objekten wie Atrien oder Verglasungen in mehrstöckigen Bürogebäuden arbeiten wir mit gesicherter Steigtechnik und zertifizierten Höhenarbeitern.",
@@ -233,7 +233,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   treppenhausreinigung: {
-    seoTitle: "Treppenhausreinigung Dortmund | fedox Facility Services",
+    seoTitle: "Treppenhausreinigung Dortmund | Fedox Facility Services",
     seoDescription:
       "Zuverlässige Treppenhausreinigung in Dortmund für Mehrfamilienhäuser, Bürogebäude und Gewerbeobjekte. Feste Intervalle, faire Preise.",
     keywords: [
@@ -244,7 +244,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Hausbetreuung Dortmund",
     ],
     intro:
-      "Das Treppenhaus ist die Visitenkarte jedes Mehrfamilienhauses und jedes Bürogebäudes. Wer in Dortmund ein gepflegtes Treppenhaus zeigt, signalisiert Wertschätzung. Gegenüber Mietern, Besuchern und Eigentümern gleichermaßen. Wir von fedox übernehmen die regelmäßige Treppenhausreinigung in Dortmund: mit festen Teams, klaren Intervallen und fairer Preisgestaltung.",
+      "Das Treppenhaus ist die Visitenkarte jedes Mehrfamilienhauses und jedes Bürogebäudes. Wer in Dortmund ein gepflegtes Treppenhaus zeigt, signalisiert Wertschätzung. Gegenüber Mietern, Besuchern und Eigentümern gleichermaßen. Wir von Fedox übernehmen die regelmäßige Treppenhausreinigung in Dortmund: mit festen Teams, klaren Intervallen und fairer Preisgestaltung.",
     paragraphs: [
       "Eine professionelle Treppenhausreinigung umfasst deutlich mehr als nur das Wischen der Stufen. Wir reinigen Treppenstufen, Podeste, Geländer und Handläufe, Haustüren innen und außen, Briefkastenanlagen, Fensterbänke, Lichtschalter, Klingelanlagen und den Eingangsbereich. Spinnweben werden entfernt, Kellertreppen bei Bedarf mit integriert und Wischproben zur Qualitätskontrolle dokumentiert.",
       "Für Dortmunder Hausverwaltungen und private Eigentümer sind vor allem drei Dinge wichtig: Termintreue, gleichbleibende Qualität und klare Kommunikation. Genau das liefern wir. Jedes Objekt hat bei uns einen festen Ansprechpartner, einen schriftlich fixierten Reinigungsplan und dokumentierte Reinigungstermine. So wissen Eigentümer, Mieter und Verwaltung jederzeit, wann gereinigt wurde und was konkret enthalten ist.",
@@ -339,7 +339,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   "hygiene-desinfektion": {
-    seoTitle: "Hygiene- & Desinfektionsreinigung Dortmund | fedox Facility Services",
+    seoTitle: "Hygiene- & Desinfektionsreinigung Dortmund | Fedox Facility Services",
     seoDescription:
       "Zertifizierte Hygiene- und Desinfektionsreinigung in Dortmund für Praxen, Büros und sensible Bereiche. Jetzt Angebot anfordern.",
     keywords: [
@@ -350,7 +350,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Sanitärreinigung Dortmund",
     ],
     intro:
-      "Hygiene ist in Dortmunder Arztpraxen, Bürogebäuden und öffentlichen Einrichtungen kein Detail, sondern Grundvoraussetzung. Wir von fedox liefern eine professionelle Hygiene- und Desinfektionsreinigung, die messbar funktioniert. Mit zertifizierten Mitteln, geschultem Personal und dokumentierten Abläufen. Unsere Kunden in Dortmund reichen von Arztpraxen über Büros bis zu Seniorenheimen und Gemeinschaftsanlagen.",
+      "Hygiene ist in Dortmunder Arztpraxen, Bürogebäuden und öffentlichen Einrichtungen kein Detail, sondern Grundvoraussetzung. Wir von Fedox liefern eine professionelle Hygiene- und Desinfektionsreinigung, die messbar funktioniert. Mit zertifizierten Mitteln, geschultem Personal und dokumentierten Abläufen. Unsere Kunden in Dortmund reichen von Arztpraxen über Büros bis zu Seniorenheimen und Gemeinschaftsanlagen.",
     paragraphs: [
       "Der Unterschied zwischen normaler Reinigung und echter Desinfektion liegt in der Prozess-Sicherheit. Einfaches Wischen entfernt Schmutz, aber eine fachgerechte Desinfektionsreinigung reduziert Keime messbar und verhindert Kreuzkontaminationen zwischen Flächen. Wir arbeiten nach klar definierten Hygieneplänen: Handkontaktflächen, Sanitärbereiche, Patientenkontaktzonen und Gemeinschaftsflächen werden nach RKI-Empfehlungen gereinigt und mit VAH-gelisteten Mitteln desinfiziert.",
       "Für Dortmunder Arztpraxen, Zahnarztpraxen und Therapieeinrichtungen ist zuverlässige Hygiene keine Option, sondern gesetzliche Pflicht. Wir kennen die Anforderungen, stimmen Reinigungszyklen mit dem Praxisalltag ab und arbeiten außerhalb der Sprechzeiten. Farbcodierte Mikrofaser-Systeme, dosiergenaue Mittel und klar getrennte Arbeitsbereiche sind bei uns Standard. Nichts wird vermischt, nichts wird verschleppt.",
@@ -445,7 +445,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   fassadenreinigung: {
-    seoTitle: "Fassadenreinigung Dortmund | fedox Facility Services",
+    seoTitle: "Fassadenreinigung Dortmund | Fedox Facility Services",
     seoDescription:
       "Professionelle Fassadenreinigung in Dortmund. Schonend, gründlich, wertsteigernd. Jetzt unverbindliches Angebot anfordern.",
     keywords: [
@@ -551,7 +551,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   sonderreinigung: {
-    seoTitle: "Sonderreinigung Dortmund | fedox Facility Services",
+    seoTitle: "Sonderreinigung Dortmund | Fedox Facility Services",
     seoDescription:
       "Professionelle Sonderreinigung in Dortmund. Flexibel, gründlich, lösungsorientiert. Für alles, was nicht Standard ist. Jetzt anfragen.",
     keywords: [
@@ -562,7 +562,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Polsterreinigung Dortmund",
     ],
     intro:
-      "Nicht jede Reinigungsaufgabe passt in ein festes Leistungsverzeichnis. Wenn Sie in Dortmund eine Reinigung brauchen, die über den Alltag hinausgeht. Ob Teppich, Polster, Nikotin-Belastung, Wasserschaden oder Vor-Vermietungs-Reinigung. Sind wir für Sie da. fedox übernimmt Sonderreinigungen kurzfristig, diskret und lösungsorientiert, mit passender Technik für jedes Problem.",
+      "Nicht jede Reinigungsaufgabe passt in ein festes Leistungsverzeichnis. Wenn Sie in Dortmund eine Reinigung brauchen, die über den Alltag hinausgeht. Ob Teppich, Polster, Nikotin-Belastung, Wasserschaden oder Vor-Vermietungs-Reinigung. Sind wir für Sie da. Fedox übernimmt Sonderreinigungen kurzfristig, diskret und lösungsorientiert, mit passender Technik für jedes Problem.",
     paragraphs: [
       "Typische Sonderreinigungen in Dortmund sind Teppich- und Polsterreinigungen in Büros und Praxen, Nikotinentfernung in Mietwohnungen vor der Neuvermietung, Grundreinigungen nach jahrelanger Nutzung, Reinigungen nach Handwerker-Einsätzen und Einmalreinigungen vor wichtigen Terminen wie Besichtigungen, Audits oder Firmenevents. Jede dieser Aufgaben braucht eigene Maschinen und Chemie. Und vor allem Erfahrung, um das richtige Verfahren zu wählen.",
       "Wir arbeiten mit professionellen Sprühextraktions-Geräten für Teppiche, Polster und Matratzen, mit Einscheibenmaschinen für Grundreinigungen harter Böden, mit Hochdruck und speziellen Lösungen für hartnäckige Flecken und Beläge. Bei Nikotin- oder Geruchsbelastung kombinieren wir chemische Reinigung mit Geruchsneutralisation und sorgen dafür, dass Wohnung oder Büro wieder frei nutzbar sind.",
@@ -657,7 +657,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   photovoltaikreinigung: {
-    seoTitle: "Photovoltaik-Reinigung Dortmund | fedox Facility Services",
+    seoTitle: "Photovoltaik-Reinigung Dortmund | Fedox Facility Services",
     seoDescription:
       "Fachgerechte Photovoltaik-Reinigung in Dortmund für maximale Erträge. Schonend, materialschützend, mit vollem Versicherungsschutz.",
     keywords: [
@@ -763,7 +763,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   gebaeudemanagement: {
-    seoTitle: "Gebäudemanagement Dortmund | fedox Facility Services",
+    seoTitle: "Gebäudemanagement Dortmund | Fedox Facility Services",
     seoDescription:
       "Professionelles Gebäudemanagement in Dortmund. Werterhaltung, technische Betreuung und Reinigung aus einer Hand. Jetzt anfragen.",
     keywords: [
@@ -774,7 +774,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Gebäudereinigung Dortmund",
     ],
     intro:
-      "Gebäudemanagement in Dortmund bedeutet: ein Ansprechpartner für alles, was die Immobilie am Laufen hält. Reinigung, Außenanlagen, Winterdienst, kleinere Reparaturen, Entrümpelungen und die regelmäßige Kontrolle des Gesamtzustands. Wir von fedox bündeln diese Leistungen für Eigentümer, Hausverwaltungen und Unternehmen in Dortmund. Verlässlich, transparent und mit klarer Zuständigkeit.",
+      "Gebäudemanagement in Dortmund bedeutet: ein Ansprechpartner für alles, was die Immobilie am Laufen hält. Reinigung, Außenanlagen, Winterdienst, kleinere Reparaturen, Entrümpelungen und die regelmäßige Kontrolle des Gesamtzustands. Wir von Fedox bündeln diese Leistungen für Eigentümer, Hausverwaltungen und Unternehmen in Dortmund. Verlässlich, transparent und mit klarer Zuständigkeit.",
     paragraphs: [
       "Der größte Vorteil eines strukturierten Gebäudemanagements liegt in der Entlastung des Eigentümers oder der Verwaltung. Statt mit fünf verschiedenen Dienstleistern zu koordinieren, haben Sie einen einzigen Ansprechpartner, der die Abläufe kennt, Termine plant und Probleme vor Ort löst. Wir übernehmen die klassische Hausmeistertätigkeit, kombinieren sie mit Reinigung, Grünpflege und Winterdienst und ergänzen bei Bedarf kleinere Reparaturen.",
       "Für Dortmunder Wohn- und Gewerbeobjekte bieten wir individuelle Betreuungspakete: von der einmaligen Objektbegehung über wöchentliche Betreuung bis zum vollumfänglichen Facility-Paket inklusive 24/7-Bereitschaft. Wir kontrollieren Technikräume, Beleuchtung, Dach- und Keller-Bereiche, dokumentieren Mängel und koordinieren Handwerker, wenn größere Arbeiten notwendig werden. Sie bekommen regelmäßige Berichte und wissen immer, was in Ihrem Gebäude passiert.",
@@ -784,7 +784,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       {
         title: "Ein Ansprechpartner",
         description:
-          "Sie koordinieren nicht fünf Firmen, sondern haben einen festen Kontakt bei fedox.",
+          "Sie koordinieren nicht fünf Firmen, sondern haben einen festen Kontakt bei Fedox.",
       },
       {
         title: "Regelmäßige Kontrollen",
@@ -869,7 +869,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   industriereinigung: {
-    seoTitle: "Industriereinigung Dortmund | fedox Facility Services",
+    seoTitle: "Industriereinigung Dortmund | Fedox Facility Services",
     seoDescription:
       "Professionelle Industriereinigung in Dortmund für Hallen, Produktion und Logistik. Abgestimmt auf Ihren Betriebsablauf. Jetzt anfragen.",
     keywords: [
@@ -880,7 +880,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Industriebodenreinigung Dortmund",
     ],
     intro:
-      "Industrie- und Produktionsbetriebe in Dortmund stellen besondere Anforderungen an Reinigung: große Flächen, spezielle Böden, laufender Betrieb und oft enge Zeitfenster. Wir von fedox liefern Industriereinigung, die sich in Ihren Betriebsablauf einfügt. Mit professioneller Maschinentechnik, geschultem Personal und klaren Prozessen.",
+      "Industrie- und Produktionsbetriebe in Dortmund stellen besondere Anforderungen an Reinigung: große Flächen, spezielle Böden, laufender Betrieb und oft enge Zeitfenster. Wir von Fedox liefern Industriereinigung, die sich in Ihren Betriebsablauf einfügt. Mit professioneller Maschinentechnik, geschultem Personal und klaren Prozessen.",
     paragraphs: [
       "Typische Einsatzgebiete in Dortmund sind Produktionshallen, Lagerflächen, Logistikzentren, Werkstätten und Montagebereiche. Überall dort, wo klassische Reinigungstechnik an Grenzen stößt, arbeiten wir mit Aufsitz-Scheuersaugmaschinen, Handscheuersaug-Geräten, Einscheiben- und Kehrmaschinen. Unsere Teams beherrschen Industrieböden aus Beton, Estrich, Epoxidharz und Fliesen. Und wissen, welche Reinigungsmittel zum Material passen.",
       "Neben Böden reinigen wir auf Wunsch auch Hallendecken, Leuchten, Traversen, Regale und Stapler-Fahrwege. Gerade stark beanspruchte Gewerbebereiche. Etwa Wareneingänge, Verladezonen und Bereiche mit Staplerverkehr. Werden bei uns gezielter behandelt als der Rest der Halle. So bleiben sicherheitsrelevante Markierungen gut sichtbar und die Unfallgefahr sinkt.",
@@ -975,7 +975,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   baustellenreinigung: {
-    seoTitle: "Baustellenreinigung & Bauendreinigung Dortmund | fedox Facility Services",
+    seoTitle: "Baustellenreinigung & Bauendreinigung Dortmund | Fedox Facility Services",
     seoDescription:
       "Professionelle Baustellen- und Bauendreinigung in Dortmund nach Neubau, Umbau oder Sanierung. Bezugsfertig übergeben. Jetzt anfragen.",
     keywords: [
@@ -986,7 +986,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Neubaureinigung Dortmund",
     ],
     intro:
-      "Am Ende jeder Baustelle in Dortmund steht derselbe Moment: der Schlüssel soll übergeben werden. Aber vorher muss das Gebäude bezugsfertig gereinigt sein. Wir von fedox übernehmen Baustellen- und Bauendreinigung für Bauunternehmen, Handwerker, Bauträger und private Bauherren in Dortmund: gründlich, schnell und termintreu.",
+      "Am Ende jeder Baustelle in Dortmund steht derselbe Moment: der Schlüssel soll übergeben werden. Aber vorher muss das Gebäude bezugsfertig gereinigt sein. Wir von Fedox übernehmen Baustellen- und Bauendreinigung für Bauunternehmen, Handwerker, Bauträger und private Bauherren in Dortmund: gründlich, schnell und termintreu.",
     paragraphs: [
       "Die Bauendreinigung ist eine der anspruchsvollsten Reinigungsarten überhaupt. Feinstaub setzt sich überall ab, Klebereste und Folienrückstände müssen entfernt werden, Farbspritzer auf Böden und Armaturen wollen gelöst werden, und Silikonfugen müssen sauber von Randschmutz befreit sein. Wer hier oberflächlich arbeitet, sieht den Schmutz, sobald die Sonne zum ersten Mal durch die Fenster fällt. Und der Bauherr ebenfalls.",
       "Wir reinigen nach festem Schema: erst Grob-Reinigung mit Entsorgung von Bauresten, dann Feinreinigung aller Oberflächen, Böden, Fenster, Sanitärbereiche, Türen und Einbauten. Fugen werden nachgezogen, Armaturen entkalkt, Fliesen auf Zementschleier geprüft, Bodenbeläge je nach Material versiegelt oder imprägniert. Am Ende bekommen Sie ein Objekt, das nicht nur sauber aussieht, sondern auch sauber ist.",
@@ -1081,7 +1081,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   "stein-pflasterreinigung": {
-    seoTitle: "Stein- & Pflasterreinigung Dortmund | fedox Facility Services",
+    seoTitle: "Stein- & Pflasterreinigung Dortmund | Fedox Facility Services",
     seoDescription:
       "Heißwasser-Reinigung für Stein und Pflaster in Dortmund. Moos, Algen und Unkraut entfernen. Mit Neuverfugung und Versiegelung.",
     keywords: [
@@ -1187,7 +1187,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   gartenpflege: {
-    seoTitle: "Gartenpflege Dortmund | fedox Facility Services",
+    seoTitle: "Gartenpflege Dortmund | Fedox Facility Services",
     seoDescription:
       "Professionelle Gartenpflege in Dortmund für Privat- und Gewerbekunden. Rasen, Hecken, Sträucher. Regelmäßig und zuverlässig.",
     keywords: [
@@ -1198,7 +1198,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Garten Gewerbe Dortmund",
     ],
     intro:
-      "Ein gepflegter Garten oder eine gut gewartete Grünanlage prägt den Gesamteindruck jedes Dortmunder Grundstücks. Wir von fedox übernehmen die regelmäßige Gartenpflege für Privatkunden und Gewerbe in Dortmund: Rasenpflege, Hecken- und Strauchschnitt, Unkrautbekämpfung und saisonale Arbeiten. Zuverlässig, termintreu und mit eigenem Maschinenpark.",
+      "Ein gepflegter Garten oder eine gut gewartete Grünanlage prägt den Gesamteindruck jedes Dortmunder Grundstücks. Wir von Fedox übernehmen die regelmäßige Gartenpflege für Privatkunden und Gewerbe in Dortmund: Rasenpflege, Hecken- und Strauchschnitt, Unkrautbekämpfung und saisonale Arbeiten. Zuverlässig, termintreu und mit eigenem Maschinenpark.",
     paragraphs: [
       "Gartenpflege ist weit mehr als Rasenmähen. Regelmäßige Schnittarbeiten an Hecken und Sträuchern, das Vertikutieren und Düngen von Rasenflächen, das Entfernen von Laub im Herbst, das Auslichten überwachsener Bereiche und die regelmäßige Pflege von Beeten sind alles Teil eines guten Pflegekonzepts. Wer das vernachlässigt, zahlt später drauf. Mit verwilderten Flächen, kahlen Rasenstellen und abgestorbenen Pflanzen.",
       "Für Dortmunder Privatkunden bieten wir feste Pflegeintervalle oder Einzeltermine nach Bedarf. Typisch sind wöchentliches Mähen in der Hauptsaison, zwei Heckenschnitte pro Jahr, Herbst-Laub-Einsätze und einmaliges Frühjahrs-Auslichten. Für Gewerbekunden und Hausverwaltungen arbeiten wir mit Jahresverträgen, die alle Arbeiten enthalten, Sie haben einen Festpreis pro Monat und keine Überraschungen.",
@@ -1293,7 +1293,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   winterdienst: {
-    seoTitle: "Winterdienst Dortmund | fedox Facility Services",
+    seoTitle: "Winterdienst Dortmund | Fedox Facility Services",
     seoDescription:
       "Zuverlässiger Winterdienst in Dortmund, Schneeräumung und Glättebekämpfung für Gewerbe und Privatkunden. Jetzt Saison sichern.",
     keywords: [
@@ -1304,7 +1304,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Winterdienst Gewerbe Dortmund",
     ],
     intro:
-      "Wer in Dortmund seine Räum- und Streupflicht ernst nimmt, schläft im Winter deutlich besser. Wir von fedox übernehmen den Winterdienst für Gewerbekunden, Hausverwaltungen und private Eigentümer in Dortmund. Mit fester Rufbereitschaft, professioneller Räumtechnik und umweltgerechten Streumitteln.",
+      "Wer in Dortmund seine Räum- und Streupflicht ernst nimmt, schläft im Winter deutlich besser. Wir von Fedox übernehmen den Winterdienst für Gewerbekunden, Hausverwaltungen und private Eigentümer in Dortmund. Mit fester Rufbereitschaft, professioneller Räumtechnik und umweltgerechten Streumitteln.",
     paragraphs: [
       "Die Räum- und Streupflicht in Dortmund ist klar geregelt: Gehwege müssen werktags zwischen 7 und 20 Uhr (sonntags ab 9 Uhr) schnee- und eisfrei sein. Wer das nicht macht, haftet bei Stürzen und Unfällen selbst. Für Eigentümer mit mehreren Immobilien, für Unternehmen mit Mitarbeiter- und Kundenverkehr und für jeden, der früh morgens nicht selbst mit der Schippe loslegen will, ist ein professioneller Winterdienst keine Luxuslösung. Sondern eine Notwendigkeit.",
       "Wir überwachen die Wetterlage, rücken bei Schneefall oder Glätte automatisch aus und räumen Ihre Flächen rechtzeitig vor Beginn der gesetzlich festgelegten Zeiten. Unsere Einsätze dokumentieren wir schriftlich. Das ist wichtig, falls es trotz aller Sorgfalt zu einem Schadensfall kommen sollte. Sie haben damit eine lückenlose Nachweiskette und sind rechtlich auf der sicheren Seite.",
@@ -1399,7 +1399,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   entruempelung: {
-    seoTitle: "Entrümpelung & Räumung Dortmund | fedox Facility Services",
+    seoTitle: "Entrümpelung & Räumung Dortmund | Fedox Facility Services",
     seoDescription:
       "Schnelle und seriöse Entrümpelung in Dortmund. Wohnungen, Häuser, Keller und Gewerbe. Mit besenreiner Übergabe. Jetzt anfragen.",
     keywords: [
@@ -1410,7 +1410,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Räumung Dortmund",
     ],
     intro:
-      "Entrümpelungen und Haushaltsauflösungen sind selten angenehme Aufgaben. Oft stehen sie im Zusammenhang mit einem Umzug, einem Todesfall in der Familie oder einer Mieteranzeige. Wir von fedox übernehmen Entrümpelungen in Dortmund respektvoll, diskret und zügig. Mit fairen Festpreisen, klarer Kommunikation und besenreiner Übergabe.",
+      "Entrümpelungen und Haushaltsauflösungen sind selten angenehme Aufgaben. Oft stehen sie im Zusammenhang mit einem Umzug, einem Todesfall in der Familie oder einer Mieteranzeige. Wir von Fedox übernehmen Entrümpelungen in Dortmund respektvoll, diskret und zügig. Mit fairen Festpreisen, klarer Kommunikation und besenreiner Übergabe.",
     paragraphs: [
       "Typische Aufträge in Dortmund sind vollständige Wohnungsauflösungen nach Todesfall oder Auszug, Entrümpelungen von Kellern, Speichern und Garagen, Räumungen ganzer Einfamilienhäuser und Auflösungen von kleineren Büros und Praxen. Für jeden dieser Fälle bieten wir klare Abläufe: Besichtigung, Festpreisangebot, Durchführung und Endkontrolle. Keine Überraschungen, keine versteckten Kosten.",
       "Was mitgenommen werden kann, wird mitgenommen. Der Rest wird fachgerecht entsorgt. Wir trennen Sperrmüll, Elektroaltgeräte, Sondermüll und verwertbare Gegenstände sauber, geben brauchbare Dinge sinnvoll weiter und dokumentieren auf Wunsch die Entsorgungswege. Persönliche Gegenstände, die Sie nicht verlieren wollen (Dokumente, Fotos, Schmuck, Erinnerungsstücke), sortieren wir in Rücksprache gesondert heraus.",

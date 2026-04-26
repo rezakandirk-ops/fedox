@@ -55,7 +55,7 @@ export function QuoteForm() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl">
             <Image
               src="/images/quote-lady.jpg"
-              alt="Ihre Ansprechpartnerin bei fedox"
+              alt="Ihre Ansprechpartnerin bei Fedox"
               fill
               sizes="(min-width: 1024px) 420px, 100vw"
               className="object-cover"

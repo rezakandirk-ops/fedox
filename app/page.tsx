@@ -191,7 +191,7 @@ export default function HomePage() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl">
               <Image
                 src="/images/hero-facility-manager.png"
-                alt="fedox Team vor Ort"
+                alt="Fedox Team vor Ort"
                 fill
                 sizes="(min-width: 768px) 720px, 100vw"
                 quality={95}

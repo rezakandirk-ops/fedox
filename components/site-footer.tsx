@@ -6,10 +6,10 @@ import { contact } from "@/lib/contact"
 import { SeoCities } from "@/components/seo-cities"
 
 const memberships = [
-  { name: "IHK Dortmund", src: "/logo/cert/ihk-dortmund.svg" },
-  { name: "BG BAU", src: "/logo/cert/bgbau.svg" },
-  { name: "Handwerkskammer Dortmund", src: "/logo/cert/hwk-dortmund.svg" },
-  { name: "Gebäudedienstleister-Innung Dortmund", src: "/logo/cert/gebaeudereiniger-innung.svg" },
+  { name: "BG BAU", src: "/logo/cert/bgbau.jpg" },
+  { name: "Die Gebäudedienstleister", src: "/logo/cert/gebaeudedienstleister.jpg" },
+  { name: "IHK Dortmund", src: "/logo/cert/ihk-dortmund.jpg" },
+  { name: "Gebäudereiniger-Handwerk", src: "/logo/cert/gebaeudereiniger-innung.jpg" },
 ]
 
 export function SiteFooter() {
@@ -21,7 +21,7 @@ export function SiteFooter() {
           <Link href="/" className="inline-flex">
             <Image
               src="/logo/fedox-logo.png"
-              alt="fedox Facility Services"
+              alt="Fedox Facility Services"
               width={720}
               height={216}
               className="h-20 w-auto"
@@ -37,9 +37,9 @@ export function SiteFooter() {
                   <Image
                     src={m.src}
                     alt={m.name}
-                    width={80}
-                    height={56}
-                    className="h-12 w-auto object-contain opacity-80 transition-opacity hover:opacity-100"
+                    width={160}
+                    height={96}
+                    className="h-20 w-auto object-contain opacity-90 transition-opacity hover:opacity-100"
                   />
                 </li>
               ))}
@@ -61,7 +61,7 @@ export function SiteFooter() {
           <div className="grid gap-12 md:grid-cols-4">
             <div className="md:col-span-1">
               <h3 className="text-lg font-semibold tracking-tight text-white">
-                fedox Facility Services
+                Fedox Facility Services
               </h3>
               <p className="mt-6 max-w-xs text-sm leading-relaxed text-white/70">
                 Sauberkeit und Hygiene in Perfektion. Ihr verlässlicher Partner
@@ -127,7 +127,7 @@ export function SiteFooter() {
           </div>
 
           <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/50 sm:flex-row">
-            <p>© {new Date().getFullYear()} fedox Facility Services. Alle Rechte vorbehalten.</p>
+            <p>© {new Date().getFullYear()} Fedox Facility Services. Alle Rechte vorbehalten.</p>
             <div className="flex gap-6">
               <Link href="/impressum" className="hover:text-white">Impressum</Link>
               <Link href="/datenschutz" className="hover:text-white">Datenschutz</Link>

@@ -92,7 +92,7 @@ export const services: Service[] = [
     shortDescription:
       "Hygienisch einwandfreie Räume für Büros, Praxen und sensible Bereiche.",
     longDescription:
-      "Sauberkeit ist Vertrauenssache. Mit fedox Facility Service sorgen wir für hygienisch einwandfreie, gepflegte und sichere Räume. Zuverlässig, gründlich und mit höchstem Qualitätsanspruch. Ob Büros, Praxen, Sanitäranlagen, Gemeinschaftsflächen oder stark genutzte Bereiche: Wir reinigen und desinfizieren sensible Flächen sorgfältig und schaffen ein Umfeld, in dem sich Mitarbeiter, Kunden und Besucher wohl und sicher fühlen.",
+      "Sauberkeit ist Vertrauenssache. Mit Fedox Facility Service sorgen wir für hygienisch einwandfreie, gepflegte und sichere Räume. Zuverlässig, gründlich und mit höchstem Qualitätsanspruch. Ob Büros, Praxen, Sanitäranlagen, Gemeinschaftsflächen oder stark genutzte Bereiche: Wir reinigen und desinfizieren sensible Flächen sorgfältig und schaffen ein Umfeld, in dem sich Mitarbeiter, Kunden und Besucher wohl und sicher fühlen.",
     bullets: [
       "Praxen, Sanitär- und Gemeinschaftsflächen",
       "Zertifizierte Desinfektionsmittel",
@@ -255,7 +255,7 @@ export const services: Service[] = [
     shortDescription:
       "Zuverlässige Schneeräumung und Glättebekämpfung für Wege, Zufahrten und Außenflächen.",
     longDescription:
-      "Wir sorgen im Winter für sichere und geräumte Wege, Zufahrten und Flächen. Zuverlässig für Gewerbe- und Privatkunden. Ob Schneeräumung oder Glättebekämpfung, mit fedox Facility Service bleiben Ihre Außenbereiche sicher und gepflegt.",
+      "Wir sorgen im Winter für sichere und geräumte Wege, Zufahrten und Flächen. Zuverlässig für Gewerbe- und Privatkunden. Ob Schneeräumung oder Glättebekämpfung, mit Fedox Facility Service bleiben Ihre Außenbereiche sicher und gepflegt.",
     bullets: [
       "Schneeräumung und Glättebekämpfung",
       "Wege, Zufahrten und Parkplätze",

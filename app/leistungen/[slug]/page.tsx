@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: detail.seoTitle,
       description: detail.seoDescription,
       locale: "de_DE",
-      siteName: "fedox Facility Services",
+      siteName: "Fedox Facility Services",
       images: [{ url: ogImage, width: 1344, height: 768, alt: service.title }],
     },
     twitter: {
@@ -77,7 +77,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       serviceType: service.title,
       provider: {
         "@type": "LocalBusiness",
-        name: "fedox Facility Services",
+        name: "Fedox Facility Services",
         telephone: contact.phoneTel,
         email: contact.email,
         url: contact.website,
@@ -222,7 +222,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               <div className="relative aspect-[16/10] overflow-hidden rounded-3xl shadow-2xl">
                 <Image
                   src={service.heroImage}
-                  alt={`${service.title} in Dortmund | fedox Facility Services`}
+                  alt={`${service.title} in Dortmund | Fedox Facility Services`}
                   fill
                   sizes="(min-width: 1024px) 600px, 100vw"
                   className="object-cover"
@@ -231,7 +231,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </div>
               <div className="absolute -bottom-6 -left-6 hidden w-64 rounded-2xl border border-[color:var(--brand-soft)] bg-white p-5 shadow-xl lg:block">
                 <p className="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">
-                  fedox in Dortmund
+                  Fedox in Dortmund
                 </p>
                 <p className="mt-1 text-sm leading-snug text-[color:var(--brand-deep)]">
                   Zuverlässig, termintreu und mit festem Ansprechpartner seit 2020.
@@ -313,10 +313,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {/* VORTEILE */}
               <section id="vorteile" className="mt-16 scroll-mt-24">
                 <h2 className="text-3xl font-bold tracking-tight text-[color:var(--brand-deep)] sm:text-4xl">
-                  Ihre Vorteile mit fedox
+                  Ihre Vorteile mit Fedox
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                  Warum Kunden in Dortmund für diese Leistung auf fedox setzen:
+                  Warum Kunden in Dortmund für diese Leistung auf Fedox setzen:
                 </p>
                 <div className="mt-8 grid gap-5 sm:grid-cols-2">
                   {detail.benefits.map((b) => (
