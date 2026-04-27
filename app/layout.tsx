@@ -4,6 +4,7 @@ import "./globals.css"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { FloatingActions } from "@/components/floating-actions"
+import { CookieBanner } from "@/components/cookie-banner"
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -75,6 +76,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <SiteFooter />
         <FloatingActions />
+        <CookieBanner />
       </body>
     </html>
   )

@@ -132,6 +132,7 @@ export function SiteFooter() {
               <Link href="/impressum" className="hover:text-white">Impressum</Link>
               <Link href="/datenschutz" className="hover:text-white">Datenschutz</Link>
               <Link href="/agb" className="hover:text-white">AGB</Link>
+              <Link href="/cookies" className="hover:text-white">Cookies</Link>
             </div>
           </div>
         </div>
