@@ -128,9 +128,10 @@ export function SiteFooter() {
 
           <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/50 sm:flex-row">
             <p>© {new Date().getFullYear()} Fedox Facility Services. Alle Rechte vorbehalten.</p>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap gap-6">
               <Link href="/impressum" className="hover:text-white">Impressum</Link>
               <Link href="/datenschutz" className="hover:text-white">Datenschutz</Link>
+              <Link href="/agb" className="hover:text-white">AGB</Link>
             </div>
           </div>
         </div>
