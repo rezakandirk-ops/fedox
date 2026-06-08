@@ -200,6 +200,21 @@ export default function DatenschutzPage() {
                 Die Website wird bei einem Auftragsverarbeiter gehostet. Mit dem Hoster wurde ein
                 Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO geschlossen.
               </p>
+              <h3>Google Ads Conversion-Tracking</h3>
+              <p>
+                Sofern Sie der Marketing-Kategorie über den Cookie-Banner zugestimmt haben, setzen wir das
+                Conversion-Tracking von Google Ads ein (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4,
+                Irland). Damit messen wir, ob Besucher, die über eine unserer Google-Anzeigen auf unsere Seite gelangt
+                sind, eine bestimmte Aktion ausführen (Seitenaufruf, Klick auf die Telefonnummer oder den
+                WhatsApp-Link). Dabei wird ein Cookie auf Ihrem Gerät gespeichert; eine direkte Identifizierung Ihrer
+                Person erfolgt durch uns nicht. Eine Datenübermittlung in die USA kann nicht ausgeschlossen werden;
+                Google ist nach dem EU-US Data Privacy Framework zertifiziert. Rechtsgrundlage: Art. 6 Abs. 1 lit. a
+                DSGVO (Einwilligung). Sie können Ihre Einwilligung jederzeit über die{" "}
+                <Link href="/cookies" className="text-[color:var(--brand)] underline-offset-2 hover:underline">
+                  Cookie-Einstellungen
+                </Link>{" "}
+                widerrufen.
+              </p>
             </section>
 
             <section id="rechte">

@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { FloatingActions } from "@/components/floating-actions"
 import { CookieBanner } from "@/components/cookie-banner"
+import { GoogleTag } from "@/components/google-tag"
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -77,6 +78,7 @@ export default function RootLayout({
         <SiteFooter />
         <FloatingActions />
         <CookieBanner />
+        <GoogleTag />
       </body>
     </html>
   )

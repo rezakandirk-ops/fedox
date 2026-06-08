@@ -1,10 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import { useActionState } from "react"
+import { useFormStatus } from "react-dom"
 import Image from "next/image"
-import { Sparkles, ArrowRight } from "lucide-react"
+import { Sparkles, ArrowRight, CheckCircle2, AlertCircle } from "lucide-react"
 import { contact } from "@/lib/contact"
 import { services } from "@/lib/services"
+import { sendQuote, type QuoteResult } from "@/app/actions/send-quote"
 
 const dienstleistungen = services.map((s) => s.title)
 
@@ -18,32 +20,10 @@ const turnusOptionen = [
 
 const kundenart = ["Gewerblich", "Privat"]
 
-export function QuoteForm() {
-  const [submitted, setSubmitted] = useState(false)
+const initialState: QuoteResult | null = null
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    const form = e.currentTarget
-    const data = new FormData(form)
-    const lines = [
-      `Dienstleistung: ${data.get("dienstleistung")}`,
-      `Turnus: ${data.get("turnus")}`,
-      `Reinigungsfläche (qm): ${data.get("flaeche")}`,
-      `Ansprechpartner: ${data.get("name")}`,
-      `E-Mail: ${data.get("email")}`,
-      `Telefon: ${data.get("telefon")}`,
-      `Ort: ${data.get("ort")}`,
-      `Gewerblich/Privat: ${data.get("kundenart")}`,
-      `Firmenname: ${data.get("firma")}`,
-      ``,
-      `Erläuterung:`,
-      `${data.get("erlaeuterung") ?? ""}`,
-    ]
-    const subject = encodeURIComponent("Angebotsanfrage über fedox-facilityservices.de")
-    const body = encodeURIComponent(lines.join("\n"))
-    window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`
-    setSubmitted(true)
-  }
+export function QuoteForm() {
+  const [state, formAction] = useActionState(sendQuote, initialState)
 
   return (
     <section
@@ -84,17 +64,32 @@ export function QuoteForm() {
             Sie erhalten innerhalb von 24 Stunden eine Antwort.
           </p>
 
-          {submitted ? (
-            <div className="mt-8 rounded-2xl bg-[color:var(--brand-soft)] p-6 text-sm text-[color:var(--brand-deep)]">
-              Vielen Dank! Ihre E-Mail-App sollte jetzt geöffnet sein. Falls
-              nicht, schreiben Sie uns direkt an{" "}
-              <a className="font-semibold underline" href={`mailto:${contact.email}`}>
-                {contact.email}
-              </a>
-              .
+          {state?.ok ? (
+            <div className="mt-8 flex items-start gap-3 rounded-2xl bg-[color:var(--brand-soft)] p-6 text-sm text-[color:var(--brand-deep)]">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[color:var(--brand)]" />
+              <div>
+                <p className="font-semibold">Anfrage erhalten – vielen Dank!</p>
+                <p className="mt-1">
+                  Wir melden uns innerhalb von 24 Stunden bei Ihnen. Bei dringenden Anliegen erreichen Sie uns telefonisch unter{" "}
+                  <a href={`tel:${contact.phoneTel}`} className="font-semibold underline">
+                    {contact.phone}
+                  </a>
+                  .
+                </p>
+              </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="mt-8 grid gap-5 sm:grid-cols-2">
+            <form action={formAction} className="mt-8 grid gap-5 sm:grid-cols-2">
+              {/* Honeypot — für Bots */}
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+                aria-hidden="true"
+              />
+
               <Field label="Dienstleistung *" name="dienstleistung" type="select" options={dienstleistungen} required />
               <Field label="Turnus *" name="turnus" type="select" options={turnusOptionen} required />
               <Field label="Reinigungsfläche in qm *" name="flaeche" placeholder="ca. 250 qm" required />
@@ -106,21 +101,36 @@ export function QuoteForm() {
               <Field label="Firmenname" name="firma" placeholder="Musterfirma GmbH" className="sm:col-span-2" />
               <Field label="Erläuterung" name="erlaeuterung" type="textarea" className="sm:col-span-2" />
 
+              {state && !state.ok && (
+                <div className="sm:col-span-2 flex items-start gap-3 rounded-2xl bg-red-50 p-4 text-sm text-red-700">
+                  <AlertCircle className="mt-0.5 h-5 w-5 shrink-0" />
+                  <p>{state.error}</p>
+                </div>
+              )}
+
               <div className="sm:col-span-2 flex items-center justify-between gap-4">
                 <p className="text-xs text-muted-foreground">* Pflichtfeld</p>
-                <button
-                  type="submit"
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[color:var(--brand-deep)] to-[color:var(--brand)] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[color:var(--brand)]/20 transition-all hover:shadow-xl"
-                >
-                  Anfrage senden
-                  <ArrowRight className="h-4 w-4" />
-                </button>
+                <SubmitButton />
               </div>
             </form>
           )}
         </div>
       </div>
     </section>
+  )
+}
+
+function SubmitButton() {
+  const { pending } = useFormStatus()
+  return (
+    <button
+      type="submit"
+      disabled={pending}
+      className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[color:var(--brand-deep)] to-[color:var(--brand)] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[color:var(--brand)]/20 transition-all hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-70"
+    >
+      {pending ? "Wird gesendet…" : "Anfrage senden"}
+      {!pending && <ArrowRight className="h-4 w-4" />}
+    </button>
   )
 }
 

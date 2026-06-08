@@ -40,8 +40,21 @@ const categories = [
     badge: "Optional",
     color: "bg-white text-[color:var(--brand)] ring-1 ring-[color:var(--brand)]/20",
     description:
-      "Werden eingesetzt, um Besuchern relevante Inhalte und Werbeanzeigen zu zeigen sowie externe Inhalte einzubetten.",
-    cookies: [],
+      "Werden eingesetzt, um die Wirksamkeit von Werbeanzeigen zu messen (Google Ads Conversion-Tracking). Erfasst Klicks auf Telefon- und WhatsApp-Links sowie Seitenaufrufe nach Klick auf eine Anzeige.",
+    cookies: [
+      {
+        name: "_gcl_au",
+        provider: "Google Ads",
+        purpose: "Conversion-Tracking (Anrufe, WhatsApp-Klicks, Seitenaufrufe)",
+        duration: "90 Tage",
+      },
+      {
+        name: "_gcl_aw",
+        provider: "Google Ads",
+        purpose: "Speichert Klick-ID einer Google-Anzeige für Conversion-Zuordnung",
+        duration: "90 Tage",
+      },
+    ],
   },
 ]
 
