@@ -8,7 +8,6 @@ const GTAG_ID = "AW-18194336713"
 const PHONE_LABEL = "4N35CIz__rkcEMmX3uND"
 const WHATSAPP_LABEL = "sBokCI___rkcEMmX3uND"
 const PAGEVIEW_LABEL = "ON-xCJOwj7UcEMmX3uND"
-const PHONE_DISPLAY = "0231 53035483"
 
 const CONSENT_KEY = "fedox-cookie-consent"
 const CONSENT_EVENT = "fedox-consent-change"
@@ -58,6 +57,21 @@ export function GoogleTag() {
     })
   }, [allowed, pathname])
 
+  useEffect(() => {
+    if (!allowed) return
+    const handler = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null
+      const link = target?.closest('a[href^="tel:"]')
+      if (!link) return
+      if (typeof window === "undefined" || !window.gtag) return
+      window.gtag("event", "conversion", {
+        send_to: `${GTAG_ID}/${PHONE_LABEL}`,
+      })
+    }
+    document.addEventListener("click", handler)
+    return () => document.removeEventListener("click", handler)
+  }, [allowed])
+
   if (!allowed) return null
 
   return (
@@ -74,9 +88,6 @@ export function GoogleTag() {
           window.gtag = gtag;
           gtag('js', new Date());
           gtag('config', '${GTAG_ID}');
-          gtag('config', '${GTAG_ID}/${PHONE_LABEL}', {
-            'phone_conversion_number': '${PHONE_DISPLAY}'
-          });
         `}
       </Script>
     </>
