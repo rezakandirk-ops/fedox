@@ -133,6 +133,7 @@ export function SiteFooter() {
               <Link href="/datenschutz" className="hover:text-white">Datenschutz</Link>
               <Link href="/agb" className="hover:text-white">AGB</Link>
               <Link href="/cookies" className="hover:text-white">Cookies</Link>
+              <a href="https://codebase24.de" target="_blank" rel="noopener" className="hover:text-white">Webseite von Codebase24</a>
             </div>
           </div>
         </div>
