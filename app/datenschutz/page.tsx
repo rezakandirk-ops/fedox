@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const owner = {
   company: "Fedox Facility Services",
   name: "Mohamed Lamghizarti",
-  street: "Güntherstraße 42",
+  street: "Güntherstraße 42d",
   zip: "44143",
   city: "Dortmund",
   country: "Deutschland",

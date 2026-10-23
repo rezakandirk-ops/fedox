@@ -2,7 +2,7 @@
 export const contact = {
   email: "kontakt@fedox-facilityservices.de",
   phone: "0231 53035483",
-  phoneTel: "+492315303548",
+  phoneTel: "+4923153035483",
   mobile: "0163 8672944",
   mobileTel: "+491638672944",
   website: "https://www.fedox-facilityservices.de",
