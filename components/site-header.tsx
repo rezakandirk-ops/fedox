@@ -52,7 +52,7 @@ export function SiteHeader() {
         </Link>
         <div aria-hidden className="h-10 w-64 shrink-0" />
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {/* LEISTUNGEN MEGA-DROPDOWN */}
           <div
             className="relative"
@@ -153,7 +153,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="hidden items-center gap-2 lg:flex">
           <a
             href={`tel:${contact.phoneTel}`}
             className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-soft)] px-5 py-2.5 text-sm font-semibold text-[color:var(--brand-deep)] transition-all hover:bg-white hover:shadow-sm"
@@ -172,7 +172,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="md:hidden rounded-full p-2 text-[color:var(--brand-deep)]"
+          className="lg:hidden rounded-full p-2 text-[color:var(--brand-deep)]"
           onClick={() => setOpen((v) => !v)}
           aria-label="Menü"
         >
@@ -181,7 +181,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-white/95 backdrop-blur-xl md:hidden">
+        <div className="border-t border-white/10 bg-white/95 backdrop-blur-xl lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
             {/* MOBILE LEISTUNGEN */}
             <button

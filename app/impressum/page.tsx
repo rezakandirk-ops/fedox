@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Impressum",
   description:
     "Impressum und gesetzliche Anbieterkennzeichnung der Fedox Facility Services aus Dortmund nach § 5 TMG.",
-  alternates: { canonical: "https://fedox-facilityservices.de/impressum" },
+  alternates: { canonical: "https://www.fedox-facilityservices.de/impressum" },
   robots: { index: true, follow: true },
 }
 

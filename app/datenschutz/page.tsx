@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Datenschutzerklärung",
   description:
     "Datenschutzerklärung der Fedox Facility Services nach DSGVO und BDSG. Informationen zur Verarbeitung personenbezogener Daten, Cookies und Ihren Rechten.",
-  alternates: { canonical: "https://fedox-facilityservices.de/datenschutz" },
+  alternates: { canonical: "https://www.fedox-facilityservices.de/datenschutz" },
   robots: { index: true, follow: true },
 }
 

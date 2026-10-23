@@ -24,7 +24,7 @@ export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
 }
 
-const BASE_URL = "https://fedox-facilityservices.de"
+const BASE_URL = "https://www.fedox-facilityservices.de"
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params

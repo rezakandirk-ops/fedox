@@ -21,12 +21,13 @@ export type ServiceDetail = {
 
 export const serviceDetails: Record<string, ServiceDetail> = {
   "unterhalts-buerorein": {
-    seoTitle: "Unterhaltsreinigung & Büroreinigung Dortmund | Fedox Facility Services",
+    // "Büroreinigung Dortmund" hat seit 20.10.2026 eine eigene Seite (/bueroreinigung-dortmund),
+    // diese Seite zielt deshalb auf "Unterhaltsreinigung Dortmund"
+    seoTitle: "Unterhaltsreinigung Dortmund | Fedox Facility Services",
     seoDescription:
-      "Professionelle Unterhalts- & Büroreinigung in Dortmund. Zuverlässig, termintreu, individuell abgestimmt. Jetzt kostenloses Angebot anfordern.",
+      "Unterhaltsreinigung in Dortmund für Gewerbe, Verwaltung und Wohnobjekte ✓ feste Intervalle ✓ fester Ansprechpartner ✓ kostenloses Angebot in 24 Std.",
     keywords: [
       "Unterhaltsreinigung Dortmund",
-      "Büroreinigung Dortmund",
       "Gebäudereiniger Dortmund",
       "Reinigungsfirma Dortmund",
       "Gewerbereinigung Dortmund",

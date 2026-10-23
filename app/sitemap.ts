@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next"
 import { services } from "@/lib/services"
+import { getAllCityPages, getAllKeywordPages } from "@/lib/city-pages"
 
-const BASE_URL = "https://fedox-facilityservices.de"
+const BASE_URL = "https://www.fedox-facilityservices.de"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
@@ -14,5 +15,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly",
     priority: 0.8,
   }))
-  return [...staticUrls, ...serviceUrls]
+  const cityUrls: MetadataRoute.Sitemap = [...getAllCityPages(), ...getAllKeywordPages()].map((p) => ({
+    url: `${BASE_URL}/${p.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }))
+  return [...staticUrls, ...serviceUrls, ...cityUrls]
 }

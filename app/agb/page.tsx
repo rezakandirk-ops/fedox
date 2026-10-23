@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Allgemeine Geschäftsbedingungen (AGB)",
   description:
     "Allgemeine Geschäftsbedingungen der Fedox Facility Services für Gebäudereinigung, Hausmeisterdienste, Garten- und Außenanlagenpflege, Winterdienst und technische Objektbetreuung in Dortmund.",
-  alternates: { canonical: "https://fedox-facilityservices.de/agb" },
+  alternates: { canonical: "https://www.fedox-facilityservices.de/agb" },
   robots: { index: true, follow: true },
 }
 

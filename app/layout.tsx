@@ -24,7 +24,7 @@ const siteDescription =
   "Ihr Partner für Sauberkeit und Werterhalt in Dortmund und Umgebung. Unterhalts-, Glas-, Fassaden- und Sonderreinigung sowie Gebäudemanagement. Jetzt 15 % Neukundenrabatt sichern."
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fedox-facilityservices.de"),
+  metadataBase: new URL("https://www.fedox-facilityservices.de"),
   title: {
     default: siteTitle,
     template: "%s | Fedox Facility Services",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: "https://fedox-facilityservices.de",
+    url: "https://www.fedox-facilityservices.de",
     siteName: "Fedox Facility Services",
     title: siteTitle,
     description: siteDescription,

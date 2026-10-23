@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Cookie-Einstellungen",
   description:
     "Übersicht über die auf der Website der Fedox Facility Services verwendeten Cookies und Verwaltung Ihrer Einwilligung.",
-  alternates: { canonical: "https://fedox-facilityservices.de/cookies" },
+  alternates: { canonical: "https://www.fedox-facilityservices.de/cookies" },
   robots: { index: true, follow: true },
 }
 

@@ -63,6 +63,15 @@ export default function HomePage() {
                 {contact.phone}
               </a>
             </div>
+
+            {/* Interner Link auf die Dortmund-Unterseite, die "Gebäudereinigung Dortmund" ausführlich abdeckt */}
+            <Link
+              href="/gebaeudereinigung-dortmund"
+              className="group mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-white/85 underline-offset-4 hover:text-white hover:underline"
+            >
+              Gebäudereinigung Dortmund: alle 12 Stadtbezirke im Überblick
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+            </Link>
           </div>
         </div>
 
