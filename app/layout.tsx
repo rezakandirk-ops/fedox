@@ -25,6 +25,7 @@ const siteDescription =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fedox-facilityservices.de"),
+  verification: { google: "yEDy0iir5n-1TrXqnvJ4qFE-G9huac3kgOMM4bkyWbE" },
   title: {
     default: siteTitle,
     template: "%s | Fedox Facility Services",
