@@ -520,8 +520,10 @@ export default async function CityPage({ params }: PageProps) {
                     <ChevronRight className="h-5 w-5 shrink-0 text-[color:var(--brand)] transition-transform group-open:rotate-90" />
                   </summary>
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    Alle Zahlen und Ortsangaben auf dieser Seite sind nachprüfbar, abgerufen am {page.quellen.stand}.
-                    Angaben zu unseren Leistungen und zum Ablauf stammen von Fedox Facility Services selbst.
+                    <span className="font-semibold text-[color:var(--brand-deep)]">So ist diese Seite entstanden:</span>{" "}
+                    Recherche aus öffentlichen Quellen, jede Zahl und Ortsangabe von Hand gegen die Fundstelle
+                    geprüft, Stand {page.quellen.stand}. Angaben zu unseren Leistungen und zum Ablauf stammen von
+                    Fedox Facility Services selbst.
                   </p>
                   <ol className="mt-4 space-y-2 text-xs leading-relaxed text-muted-foreground">
                     {quellenSortiert.map((q) => (
